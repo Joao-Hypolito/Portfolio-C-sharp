@@ -1,16 +1,30 @@
-🧬 Projeto Biodiversidade: Sistema de Gestão de Seres Vivos
-Este projeto foi desenvolvido para consolidar conceitos avançados de Programação Orientada a Objetos (POO) em C#, focando especificamente em Abstração, Herança e Polimorfismo.
+🛠️ C# Core Labs: Dominando POO
+Uma coleção de sistemas práticos desenvolvidos para consolidar os pilares da Programação Orientada a Objetos em C#.
 
-🚀 Sobre o Projeto
-O sistema simula uma base de dados de seres vivos, dividindo-os por nichos ecológicos (Aquáticos e Terrestres) e permitindo que cada espécie implemente o seu próprio comportamento específico de som, enquanto herda propriedades fundamentais de uma classe base.
+🧬 1. Projeto Biodiversidade (Gestão de Seres Vivos)
+Focado em Abstração e Polimorfismo, simulando nichos ecológicos.
 
-🛠️ Conceitos Aplicados
-Classes Abstratas: Utilização de abstract class para definir contratos que não podem ser instanciados diretamente.
+Destaque: Uso de abstract class e override para comportamentos específicos (sons/movimentos).
 
-Métodos Abstratos vs. Concretos: Implementação de assinaturas de métodos que exigem override e métodos prontos para uso imediato.
+Técnica: Implementação de Type Casting (is/as) para manipular coleções genéricas de subclasses.
 
-Modificadores de Acesso: Gestão de visibilidade entre classes (public, internal) para garantir a integridade do sistema.
+📚 2. Sistema Biblioteca (Gestão de Acervo)
+Focado em Encapsulamento e Estrutura de Dados.
 
-Polimorfismo: Capacidade de tratar diferentes subclasses (Leão, Golfinho, Lobo) como uma única lista de SerVivo, executando comportamentos específicos em tempo de execução.
+Destaque: Organização de classes para empréstimos, usuários e títulos.
 
-Type Casting (is/as): Verificação de tipos para aceder a métodos exclusivos de subclasses dentro de coleções genéricas.
+Técnica: Gestão de estados (disponibilidade de itens) e integridade de dados via modificadores de acesso.
+
+🍽️ 3. Sistema Restaurante (Controle de Pedidos)
+Focado em Lógica de Fluxo e Instanciação.
+
+Destaque: Modelagem de mesas, pedidos e faturamento.
+
+Técnica: Relacionamento entre objetos (agregação) e manipulação de listas dinâmicas em tempo de execução.
+
+🚀 Tecnologias e Conceitos
+Linguagem: C# (.NET 10.0)
+
+Conceitos: Classes Abstratas, Herança, Polimorfismo, Encapsulamento e Type Casting.
+
+IDE: Visual Studio / VS Code
