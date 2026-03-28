@@ -22,6 +22,13 @@ Destaque: Modelagem de mesas, pedidos e faturamento.
 
 Técnica: Relacionamento entre objetos (agregação) e manipulação de listas dinâmicas em tempo de execução.
 
+🤖 4. Exército Decepticon (Gestão de Unidades de Combate)
+Focado em Associação de Objetos: Agregação vs. Composição.
+
+Destaque: Modelagem de hierarquia militar e robôs combinadores (Combiners).
+
+Técnica: Implementação de relacionamentos fortes (Composição) para membros fixos do corpo e relacionamentos fracos (Agregação) para liderança dinâmica.
+
 🚀 Tecnologias e Conceitos
 Linguagem: C# (.NET 10.0)
 
