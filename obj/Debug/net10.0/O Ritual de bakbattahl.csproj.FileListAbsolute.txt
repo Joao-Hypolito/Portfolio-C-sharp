@@ -1,0 +1,14 @@
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\bin\Debug\net10.0\O Ritual de bakbattahl.exe
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\bin\Debug\net10.0\O Ritual de bakbattahl.deps.json
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\bin\Debug\net10.0\O Ritual de bakbattahl.runtimeconfig.json
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\bin\Debug\net10.0\O Ritual de bakbattahl.dll
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\bin\Debug\net10.0\O Ritual de bakbattahl.pdb
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.AssemblyInfoInputs.cache
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.AssemblyInfo.cs
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.csproj.CoreCompileInputs.cache
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.dll
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\refint\O Ritual de bakbattahl.dll
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.pdb
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\O Ritual de bakbattahl.genruntimeconfig.cache
+C:\Users\joaoh\Desktop\Importante\Exercicios de aprendizado\C#\O Ritual de bakbattahl\O Ritual de bakbattahl\obj\Debug\net10.0\ref\O Ritual de bakbattahl.dll
