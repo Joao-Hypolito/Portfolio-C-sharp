@@ -29,6 +29,13 @@ Destaque: Modelagem de hierarquia militar e robôs combinadores (Combiners).
 
 Técnica: Implementação de relacionamentos fortes (Composição) para membros fixos do corpo e relacionamentos fracos (Agregação) para liderança dinâmica.
 
+🛡️ 5. Escaneamento Terrorcon (Protocolo de Aquisição de Alvos)
+Focado em Tomada de Decisão e Lógica de Seleção de Hardware.
+
+Destaque: Implementação de um motor de avaliação multicritério (Combustível, Ano e Estética) para seleção de disfarces robóticos.
+
+Técnica: Uso de Classes Abstratas para definição de contratos de verificação e lógica de Acúmulo/Penalidade de Score, incluindo filtragem de strings com sanitização de dados (ToLower) para validação de compatibilidade de chassi.
+
 🚀 Tecnologias e Conceitos
 Linguagem: C# (.NET 10.0)
 
