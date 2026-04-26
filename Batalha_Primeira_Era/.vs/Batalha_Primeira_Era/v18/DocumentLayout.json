@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\joaoh\\Desktop\\Importante\\Exercicios de aprendizado\\Programas POO\\Batalha_Primeira_Era\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7437149-8ECB-2BA6-9580-3647761A1BE5}|Batalha_Primeira_Era.csproj|c:\\users\\joaoh\\desktop\\importante\\exercicios de aprendizado\\programas poo\\batalha_primeira_era\\dragao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7437149-8ECB-2BA6-9580-3647761A1BE5}|Batalha_Primeira_Era.csproj|solutionrelative:dragao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dragao.cs",
+              "DocumentMoniker": "C:\\Users\\joaoh\\Desktop\\Importante\\Exercicios de aprendizado\\Programas POO\\Batalha_Primeira_Era\\Dragao.cs",
+              "RelativeDocumentMoniker": "Dragao.cs",
+              "ToolTip": "C:\\Users\\joaoh\\Desktop\\Importante\\Exercicios de aprendizado\\Programas POO\\Batalha_Primeira_Era\\Dragao.cs",
+              "RelativeToolTip": "Dragao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T15:04:04.291Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

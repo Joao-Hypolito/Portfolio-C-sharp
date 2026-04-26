@@ -14,6 +14,7 @@ namespace O_Ritual_de_bakbattahl
         public override void RealizarAcao(Personagem alvo)
         {
             int danoDeAtaque = 40;
+
             Random random = new Random();
 
             bool sorteio = random.Next(2) == 1;
