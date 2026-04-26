@@ -36,6 +36,15 @@ Destaque: Implementação de um motor de avaliação multicritério (Combustíve
 
 Técnica: Uso de Classes Abstratas para definição de contratos de verificação e lógica de Acúmulo/Penalidade de Score, incluindo filtragem de strings com sanitização de dados (ToLower) para validação de compatibilidade de chassi.
 
+⚔️ 6. Crônicas da Primeira Era (Simulador de Combate Tático)
+Focado em Lógica de Jogo, Aleatoriedade (Randomização) e Herança Avançada.
+
+Destaque: Implementação de um motor de batalha por turnos inspirado no Legendarium de Tolkien (Silmarillion), simulando o embate épico entre heróis da Terra-Média e as forças de Morgoth.
+
+Técnica: Polimorfismo e Sobrescrita (override): Cada classe (Guerreiro, Mago, Dragão) herda da base Personagem e reimplementa o método RealizarAcao, permitindo que um Guerreiro use força bruta enquanto um Dragão utiliza um sistema de sorteio para ataques de chamas.
+
+Mecânica de Status: Desenvolvimento de habilidades passivas e ativas, como o "Olhar do Dragão", que utiliza lógica probabilística para aplicar efeitos de controle (terror) nos alvos, e o "Multiplicador de Vida", que demonstra a manipulação dinâmica de atributos em tempo de execução.
+
 🚀 Tecnologias e Conceitos
 Linguagem: C# (.NET 10.0)
 
