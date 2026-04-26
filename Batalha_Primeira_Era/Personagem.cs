@@ -23,5 +23,27 @@ namespace O_Ritual_de_bakbattahl
             Console.WriteLine($"{Nome} recebeu {dano} de dano! Vida restante: {PontoDeVida}");
         }
 
+        public void MultiplicadorDeVida(Personagem alvo)
+        {
+            PontoDeVida *= 10;
+        }
+
+        public void OlharDoDragao(Personagem alvo)
+        {
+
+            Random random = new Random();
+
+            bool sorteio = random.Next(2) == 1;
+
+            if (sorteio)
+            {
+                Console.WriteLine($"\n{alvo.Nome} Está aterrorizado");
+            }
+            else
+            {
+                Console.WriteLine($"\n{alvo.Nome} Resistiu ao olhar do {this.Nome}!");
+            }
+        }
+
     }
 }

@@ -12,8 +12,8 @@ namespace O_Ritual_de_bakbattahl
 
         public override void RealizarAcao(Personagem alvo)
         {
-            int danoMagico = 25;
-            Console.WriteLine($"Mago {Nome} ataca com seu magia!");
+            int danoMagico = 120;
+            Console.WriteLine($"\nMago {Nome} ataca com seu magia!");
             alvo.ReceberDano(danoMagico);
         }
 
