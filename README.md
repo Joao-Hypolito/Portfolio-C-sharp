@@ -45,6 +45,17 @@ Técnica: Polimorfismo e Sobrescrita (override): Cada classe (Guerreiro, Mago, D
 
 Mecânica de Status: Desenvolvimento de habilidades passivas e ativas, como o "Olhar do Dragão", que utiliza lógica probabilística para aplicar efeitos de controle (terror) nos alvos, e o "Multiplicador de Vida", que demonstra a manipulação dinâmica de atributos em tempo de execução.
 
+🏛️ 7. Digital-Twin-Greenhouse-Simulator (Gêmeo Digital de Estufa IoT)
+Focado em Virtualização de Hardware, Simulação Estocástica e Resiliência de Sistemas.
+
+Destaque: Desenvolvimento de um simulador de alta fidelidade para substituir sensores físicos instáveis, garantindo a integridade do fluxo de dados para integração com SQL e Dashboards.
+
+Técnica: * Lógica de Inércia Térmica: Implementação de variação incremental via algoritmos probabilísticos (Random Walk) para mimetizar o comportamento físico real de temperatura e umidade, evitando saltos de dados impossíveis.
+
+Protocolo de Injeção de Ruído: Criação de um motor de estresse para simular falhas críticas de hardware (Edge Cases), testando a capacidade de recuperação do sistema e a robustez da lógica de acionamento de atuadores.
+
+Feedback Loop: Modelagem de controle em tempo real onde o estado do "Atuador" (Ventilador/Aquecedor) influencia dinamicamente a tendência de subida ou descida da variável simulada, criando um ecossistema autoajustável.
+
 🚀 Tecnologias e Conceitos
 Linguagem: C# (.NET 10.0)
 
