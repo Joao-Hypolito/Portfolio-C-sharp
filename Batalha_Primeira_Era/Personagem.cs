@@ -9,10 +9,13 @@ namespace O_Ritual_de_bakbattahl
         public string Nome { get; set; }
         public int PontoDeVida { get; protected set; }
 
-        public Personagem(string nome, int vida) 
+        public int Dano { get; set; }
+
+        public Personagem(string nome, int vida, int dano) 
         {
          Nome = nome;
          PontoDeVida = vida;
+         Dano = dano;
         }
 
         public abstract void RealizarAcao(Personagem alvo);
@@ -28,6 +31,35 @@ namespace O_Ritual_de_bakbattahl
             PontoDeVida *= 10;
         }
 
+        public int PartesDoDragao(Personagem alvo)
+        {
+            int danoFinal = this.Dano;
+
+            Random random = new Random();
+            int Sorteio = random.Next(1, 101);
+
+            if (Sorteio <= 50)
+            {
+                danoFinal = Dano * 1;
+                Console.WriteLine($"\n{Nome} acertou a escama do {alvo.Nome}!!!");
+            }
+            else if (Sorteio <= 70)
+            {
+                danoFinal = Dano * 2;
+                Console.WriteLine($"\n{Nome} acertou o pescoco do {alvo.Nome}!!!");
+            }
+            else if (Sorteio <= 90)
+            {
+                danoFinal = Dano * 5;
+                Console.WriteLine($"\n{Nome} acertou a cabeca do {alvo.Nome}!!!");
+            }
+            else
+            {
+                danoFinal = Dano * 8;
+                Console.WriteLine($"\n {Nome} acertou o ventre do {alvo.Nome}!!!");
+            }
+            return danoFinal;
+        }
         public void OlharDoDragao(Personagem alvo)
         {
 

@@ -6,14 +6,12 @@ namespace O_Ritual_de_bakbattahl
 {
     public class Dragao : Personagem
     {
-        public Dragao(string nome, int vida) : base(nome, vida)
-        {
-        }
+        public Dragao(string nome, int vida, int dano) : base(nome, vida, dano){}
 
 
         public override void RealizarAcao(Personagem alvo)
         {
-            int danoDeAtaque = 40;
+            int danoDeAtaque = this.Dano;
 
             Random random = new Random();
 

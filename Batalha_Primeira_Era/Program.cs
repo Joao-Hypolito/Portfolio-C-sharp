@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Guerreiro hurin = new Guerreiro("Hurin", 100);
-            Mago galadriel = new Mago("Galadriel", 90);
-            Dragao glaurung = new Dragao("Glaurung", 100);
+            Guerreiro hurin = new Guerreiro("Hurin", 100, 97);
+            Mago galadriel = new Mago("Galadriel", 90, 120);
+            Dragao glaurung = new Dragao("Glaurung", 100, 40);
 
             glaurung.MultiplicadorDeVida(glaurung);
 

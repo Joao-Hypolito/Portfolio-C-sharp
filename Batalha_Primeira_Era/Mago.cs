@@ -6,14 +6,14 @@ namespace O_Ritual_de_bakbattahl
 {
     public class Mago : Personagem
     {
-        public Mago(string nome, int vida) : base(nome, vida)
+        public Mago(string nome, int vida, int dano) : base(nome, vida, dano)
         {
         }
 
         public override void RealizarAcao(Personagem alvo)
         {
-            int danoMagico = 120;
-            Console.WriteLine($"\nMago {Nome} ataca com seu magia!");
+            int danoMagico = PartesDoDragao(alvo);
+            Console.WriteLine($"Mago {Nome} ataca com seu magia!");
             alvo.ReceberDano(danoMagico);
         }
 
