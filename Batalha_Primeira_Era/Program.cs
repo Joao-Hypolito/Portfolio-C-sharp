@@ -1,4 +1,4 @@
-﻿namespace O_Ritual_de_bakbattahl
+﻿namespace Batalha_Primeira_Era
 {
     internal class Program
     {

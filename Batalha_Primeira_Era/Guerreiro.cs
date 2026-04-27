@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace O_Ritual_de_bakbattahl
+namespace Batalha_Primeira_Era
 {
     public class Guerreiro: Personagem
     {
