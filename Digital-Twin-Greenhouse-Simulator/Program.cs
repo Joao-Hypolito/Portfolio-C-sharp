@@ -4,23 +4,22 @@
     {
         static void Main(string[] args)
         {
-            Model minhaEstufa = new Model(25.0, 60.0);
+            Tomate EstufaTomate = new Tomate(25.0, 60.0);
+            Laranja EstufaLaranja = new Laranja(35.0, 60.0);
 
-            Random rng = new Random();
 
             while (true)
             {
-                if(rng.Next(0,100) < 5)
-                {
-                    minhaEstufa.SimuladorRuido();
-                }
-                else
-                {
-                    minhaEstufa.GerarNovaLeitura();
-                }
+                //-----------------ESTUFA DE TOMATE-----------------
 
-                Console.WriteLine($"[{minhaEstufa.DataHora}] Temp: {minhaEstufa.Temperatura:F2} Umid: {minhaEstufa.Umidade:F2}  {(minhaEstufa.Atuador ? "LIGADO" : "DESLIGADO")}");
+                EstufaTomate.GerarNovaLeitura();
+                Console.WriteLine($"Estufa de Tomate: [{EstufaTomate.DataHora}] Temp: {EstufaTomate.Temperatura:F2} Umid: {EstufaTomate.Umidade:F2}");
+                System.Threading.Thread.Sleep(2000);
 
+                //-----------------ESTUFA DE LARANJA----------------
+
+                EstufaLaranja.GerarNovaLeitura();
+                Console.WriteLine($"\nEstufa de Laranja: [{EstufaLaranja.DataHora}] Temp: {EstufaLaranja.Temperatura:F2} Umid: {EstufaLaranja.Umidade:F2}");
                 System.Threading.Thread.Sleep(2000);
             }
         }
