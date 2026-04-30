@@ -1,22 +1,24 @@
-﻿namespace Batalha_Primeira_Era
+﻿using O_Ritual_de_bakbattahl.Character;
+
+namespace Batalha_Primeira_Era
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Guerreiro hurin = new Guerreiro("Hurin", 100, 97);
-            Mago galadriel = new Mago("Galadriel", 90, 120);
-            Dragao glaurung = new Dragao("Glaurung", 100, 40);
+            Warrior hurin = new Warrior("Hurin", 100, 97);
+            Wizard galadriel = new Wizard("Galadriel", 90, 120);
+            Dragon glaurung = new Dragon("Glaurung", 100, 40);
 
-            glaurung.MultiplicadorDeVida(glaurung);
+            glaurung.LifeMultiplier(glaurung);
 
-            hurin.RealizarAcao(glaurung);
-            galadriel.RealizarAcao(glaurung);
+            hurin.TakeAction(glaurung);
+            galadriel.TakeAction(glaurung);
 
-            Console.WriteLine("\n---Turno do Inimigo---");
+            Console.WriteLine("\n---Enemy's Turn---");
 
-            glaurung.OlharDoDragao(galadriel);
-            glaurung.RealizarAcao(hurin);
+            glaurung.DragonGaze(galadriel);
+            glaurung.TakeAction(hurin);
 
         }
     }
