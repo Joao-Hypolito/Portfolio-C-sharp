@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Batalha_Primeira_Era.Core;
+using static Batalha_Primeira_Era.Core.Character;
 
-namespace O_Ritual_de_bakbattahl.Items.Weapons
+namespace Batalha_Primeira_Era.Items.Weapons
 {
     public abstract class Weapons
     {
+        public string Name { get; set; }
         public float BaseDamage { get; set; }
         
         public float Weight { get; set; }
@@ -24,8 +27,9 @@ namespace O_Ritual_de_bakbattahl.Items.Weapons
 
         public float KnockbackForce { get; set; }
 
-        public Weapons(float baseDamage, float weight, int durability, int requiredStrength, int requiredDexterity, float criticalChance, float criticalMultiplier, float armorPenetration, float knockbackForce)
+        public Weapons(string name, float baseDamage, float weight, int durability, int requiredStrength, int requiredDexterity, float criticalChance, float criticalMultiplier, float armorPenetration, float knockbackForce)
         {
+            Name = name;
             BaseDamage = baseDamage;
             Weight = weight;
             Durability = durability;
@@ -36,5 +40,7 @@ namespace O_Ritual_de_bakbattahl.Items.Weapons
             ArmorPenetration = armorPenetration;
             KnockbackForce = knockbackForce;
         }
+        public abstract float CalculateDamage(Batalha_Primeira_Era.Core.Character wielder);
+
     }
 }

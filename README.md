@@ -41,6 +41,8 @@ Focado em Lógica de Jogo, Aleatoriedade (Randomização) e Herança Avançada.
 
 Destaque: Implementação de um motor de batalha por turnos inspirado no Legendarium de Tolkien (Silmarillion), simulando o embate épico entre heróis da Terra-Média e as forças de Morgoth.
 
+Arquitetura: Implementação de Inversão de Dependência, onde o cálculo de dano é delegado para classes de armas abstratas. Isso permite que o motor de combate seja extensível: novas armas e modificadores podem ser adicionados sem alterar o código base das entidades
+
 Técnica: Polimorfismo e Sobrescrita (override): Cada classe (Guerreiro, Mago, Dragão) herda da base Personagem e reimplementa o método RealizarAcao, permitindo que um Guerreiro use força bruta enquanto um Dragão utiliza um sistema de sorteio para ataques de chamas.
 
 Mecânica de Status: Desenvolvimento de habilidades passivas e ativas, como o "Olhar do Dragão", que utiliza lógica probabilística para aplicar efeitos de controle (terror) nos alvos, e o "Multiplicador de Vida", que demonstra a manipulação dinâmica de atributos em tempo de execução.

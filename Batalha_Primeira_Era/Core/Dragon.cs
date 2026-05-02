@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Batalha_Primeira_Era.Items.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace O_Ritual_de_bakbattahl.Character
+namespace Batalha_Primeira_Era.Core
 {
     public class Dragon : Character
     {
-        public Dragon(string name, float life, float damage) : base(name, life, damage)
+        public Dragon(string name, float life, float strength, Weapons wielder) : base(name, life, strength, wielder)
         {
         }
 
 
         public override void TakeAction(Character target)
         {
-            float AtackDamage = this.Damage;
+            float AtackDamage = this.Strength;
 
             Random random = new Random();
 

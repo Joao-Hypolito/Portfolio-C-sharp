@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Batalha_Primeira_Era.Items.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace O_Ritual_de_bakbattahl.Character
+namespace Batalha_Primeira_Era.Core
 {
     public class Wizard : Character
     {
-        public Wizard(string name, float life, float damage) : base(name, life, damage)
+        public Wizard(string name, float life, float strength, Weapons wielder) : base(name, life, strength, wielder)
         {
         }
 
