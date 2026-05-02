@@ -7,16 +7,10 @@ namespace Batalha_Primeira_Era.Core
 {
     public class Wizard : Character
     {
-        public Wizard(string name, float life, float strength, Weapons wielder) : base(name, life, strength, wielder)
+        public Wizard(string name, float life, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, strength, dexterity, knowlegde, wielder)
         {
         }
 
-        public override void TakeAction(Character target)
-        {
-            float MagicAtack = DragonParts(target);
-            Console.WriteLine($"Wizard {Name} attacks with his magic!");
-            target.ReceiveDamage(MagicAtack);
-        }
 
     }
 }

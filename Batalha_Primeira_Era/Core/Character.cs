@@ -9,22 +9,33 @@ namespace Batalha_Primeira_Era.Core
     {
         public string Name { get; set; }
         public float lifePont { get; protected set; }
-        public float Strength { get; set; }
-        public Weapons EquippedWeapon { get; set; }
+        public int Strength { get; set; }
+        public int Dexterity {  get; set; }
+        public int Knowledge { get; set; }
+        public Weapon EquippedWeapon { get; set; }
 
-        public Character(string name, float life, float strength, Weapons wielder) 
+        public Character(string name, float life, int strength, int dexterity, int knowlegde, Weapon wielder) 
         {
-         Name = name;
-         lifePont = life;
-         Strength = strength;
-         EquippedWeapon = wielder;
+            Name = name;
+            lifePont = life;
+            Strength = strength;
+            Dexterity = dexterity;
+            Knowledge = knowlegde;
+            EquippedWeapon = wielder;
         }
 
-        public abstract void TakeAction (Character target);
+        public void TakeAction (Character target)
+        {
+            float finalDamage = EquippedWeapon.CalculateDamage(this);
+            target.ReceiveDamage(finalDamage);
+            Console.WriteLine($"{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
+            Console.WriteLine($"{target.Name} took {finalDamage} damage.");
+        }
 
         public void ReceiveDamage(float amount)
         {
             lifePont -= amount;
+            if (lifePont < 0) lifePont = 0;
             Console.WriteLine($"{Name} received {amount} damage! Life remaining: {lifePont}");
         }
 
@@ -61,22 +72,6 @@ namespace Batalha_Primeira_Era.Core
                 Console.WriteLine($"\n {Name} hit {target.Name} in the stomach!!!");
             }
             return Finaldam;
-        }
-        public void DragonGaze(Character target)
-        {
-
-            Random random = new Random();
-
-            bool Raffle = random.Next(2) == 1;
-
-            if (Raffle)
-            {
-                Console.WriteLine($"\n{target.Name} is terrified");
-            }
-            else
-            {
-                Console.WriteLine($"\n{target.Name} resisted the gaze of {this.Name}!");
-            }
         }
 
     }

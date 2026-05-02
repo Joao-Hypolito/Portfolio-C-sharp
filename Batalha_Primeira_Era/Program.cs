@@ -1,5 +1,6 @@
 ﻿using Batalha_Primeira_Era.Core;
 using Batalha_Primeira_Era.Items.Weapons;
+using Batalha_Primeira_Era.Items.BossAction.DragonAtack;
 
 namespace Batalha_Primeira_Era
 {
@@ -7,11 +8,14 @@ namespace Batalha_Primeira_Era
     {
         static void Main(string[] args)
         {
-            Great_Axe machadoInicial = new Great_Axe("Storm", 50f, 10f, 100, 15, 5, 0.1f, 2.0f, 5f, 20f);
+            Great_Axe axelinitial = new Great_Axe("Storm", 97f, 10, 10, 10);
+            Staff staffinitial = new Staff("Staff", 80f, 10, 9, 30);
+            Grazing GrazingDragon = new Grazing("Grazing", 80f, 10, 9, 30);
+            DragonGaze Gaze = new DragonGaze("Glaurung", 0f, 0, 0, 0);
 
-            Warrior hurin = new Warrior("Hurin", 100, 97, machadoInicial);
-            Wizard galadriel = new Wizard("Galadriel", 90, 120, machadoInicial);
-            Dragon glaurung = new Dragon("Glaurung", 100, 40, machadoInicial);
+            Warrior hurin = new Warrior("Hurin", 100f, 40, 23, 15, axelinitial);
+            Wizard galadriel = new Wizard("Galadriel", 90f, 14, 17, 57, staffinitial);
+            Dragon glaurung = new Dragon("Glaurung", 100f, 50, 30, 40, Gaze);
 
             glaurung.LifeMultiplier(glaurung);
 
@@ -20,7 +24,7 @@ namespace Batalha_Primeira_Era
 
             Console.WriteLine("\n---Enemy's Turn---");
 
-            glaurung.DragonGaze(galadriel);
+            Gaze.Dragongaze(galadriel);
             glaurung.TakeAction(hurin);
 
         }

@@ -7,16 +7,9 @@ namespace Batalha_Primeira_Era.Core
 {
     public class Warrior: Character
     {
-        public Warrior(string name, float life, float strength, Weapons wielder) : base(name, life, strength, wielder)
+        public Warrior(string name, float life, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, strength, dexterity, knowlegde, wielder)
         {
         }
 
-        public override void TakeAction(Character target)
-        {
-            float AtackDamage =  EquippedWeapon.CalculateDamage(this);
-            AtackDamage = DragonParts(target);
-            Console.WriteLine($"Warrior {Name} attacks with his {EquippedWeapon.Name}!");
-            target.ReceiveDamage(AtackDamage);
-        }
     }
 }

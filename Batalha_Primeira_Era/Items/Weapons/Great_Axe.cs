@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Batalha_Primeira_Era.Items.Weapons
 {
-    public class Great_Axe: Weapons
+    public class Great_Axe: Weapon
     {
-        public Great_Axe(string name, float baseDamage, float weight, int durability, int requiredStrength, int requiredDexterity, float criticalChance, float criticalMultiplier, float armorPenetration, float knockbackForce) : 
-            base (name, baseDamage, weight, durability, requiredStrength, requiredDexterity, criticalChance, criticalMultiplier, armorPenetration, knockbackForce) { }
+        public Great_Axe(string name, float baseDamage,   int reStrength, int reDexterity, int reKnowledge) : 
+            base (name, baseDamage, reStrength, reDexterity, reKnowledge) { }
 
         public override float CalculateDamage(Batalha_Primeira_Era.Core.Character wielder)
         {
