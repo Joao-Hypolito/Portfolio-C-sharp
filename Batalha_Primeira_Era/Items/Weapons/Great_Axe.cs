@@ -11,9 +11,8 @@ namespace Batalha_Primeira_Era.Items.Weapons
 
         public override float CalculateDamage(Batalha_Primeira_Era.Core.Character wielder)
         {
-            float finalDamage = this.BaseDamage + (wielder.Strength * 1.5f);
-
-            return finalDamage;
+            float variation = new Random().Next(90, 110) / 100f;
+            return (BaseDamage + (wielder.Strength * 1.5f)) * variation;
         }
 
 

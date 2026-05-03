@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Batalha_Primeira_Era.Items.Weapons
 {
-    public class Staff: Weapon
+    public class Dagger : Weapon
     {
-        public Staff(string name, float baseDamage, int reStrength, int reDexterity, int reKnowledge) :
+        public Dagger(string name, float baseDamage, int reStrength, int reDexterity, int reKnowledge) :
             base(name, baseDamage, reStrength, reDexterity, reKnowledge)
         { }
 
@@ -15,5 +15,7 @@ namespace Batalha_Primeira_Era.Items.Weapons
             float variation = new Random().Next(90, 110) / 100f;
             return (BaseDamage + (wielder.Strength * 1.5f)) * variation;
         }
+
+
     }
 }

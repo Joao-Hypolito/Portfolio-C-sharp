@@ -15,9 +15,8 @@ namespace Batalha_Primeira_Era.Items.BossAction.DragonAtack
 
         public override float CalculateDamage(Character wielder)
         {
-            float finalDamage = this.BaseDamage + (wielder.Strength * 1.5f);
-
-            return finalDamage;
+            float variation = new Random().Next(90, 110) / 100f;
+            return (BaseDamage + (wielder.Strength * 1.5f)) * variation;
         }
     }
 }

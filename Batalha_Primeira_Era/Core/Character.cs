@@ -1,23 +1,48 @@
 ﻿using Batalha_Primeira_Era.Items.Weapons;
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Batalha_Primeira_Era.Core
 {
+    // ============================================================
+    // CONTRATOS (Interfaces): O que o personagem PODE FAZER
+    // ============================================================
+    public interface IAgile
+    {
+        void Dodge(); // Habilidade de Esquiva
+    }
+
+    public interface Imagic
+    {
+        void CastSpell(); // Habilidade Mágica
+    }
+
+    public interface IMelee
+    {
+        void melee(); // Habilidade corpo a corpo
+    }
+
+    public interface IRanged
+    {
+        void ranged(); // Habilidade de Disparo
+    }
     public abstract class Character
     {
         public string Name { get; set; }
         public float lifePont { get; protected set; }
+        public float Defense { get; set; }
         public int Strength { get; set; }
         public int Dexterity {  get; set; }
         public int Knowledge { get; set; }
         public Weapon EquippedWeapon { get; set; }
 
-        public Character(string name, float life, int strength, int dexterity, int knowlegde, Weapon wielder) 
+        public Character(string name, float life, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) 
         {
             Name = name;
             lifePont = life;
+            Defense = defense;
             Strength = strength;
             Dexterity = dexterity;
             Knowledge = knowlegde;
@@ -27,51 +52,20 @@ namespace Batalha_Primeira_Era.Core
         public void TakeAction (Character target)
         {
             float finalDamage = EquippedWeapon.CalculateDamage(this);
+            Console.WriteLine($"\n{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
             target.ReceiveDamage(finalDamage);
-            Console.WriteLine($"{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
-            Console.WriteLine($"{target.Name} took {finalDamage} damage.");
         }
 
-        public void ReceiveDamage(float amount)
+        public virtual void ReceiveDamage(float damage)
         {
-            lifePont -= amount;
-            if (lifePont < 0) lifePont = 0;
-            Console.WriteLine($"{Name} received {amount} damage! Life remaining: {lifePont}");
-        }
+            float damageAfterDefense = damage - (this.Defense / 2);
+            if (damageAfterDefense < 0) damageAfterDefense = 0;
 
-        public void LifeMultiplier(Character target)
-        {
-            lifePont *= 10;
-        }
 
-        public float DragonParts(Character target)
-        {
-            float Finaldam = this.Strength;
-
-            Random random = new Random();
-            int Raffle = random.Next(1, 101);
-
-            if (Raffle <= 50)
-            {
-                Finaldam = Strength * 1;
-                Console.WriteLine($"\n{Name} hit the {target.Name} scale right!!!");
-            }
-            else if (Raffle <= 70)
-            {
-                Finaldam = Strength * 2;
-                Console.WriteLine($"\n{Name} hit {target.Name} in the neck!!!");
-            }
-            else if (Raffle <= 90)
-            {
-                Finaldam = Strength * 5;
-                Console.WriteLine($"\n{Name} hit {target.Name} in the head!!!");
-            }
-            else
-            {
-                Finaldam = Strength * 8;
-                Console.WriteLine($"\n {Name} hit {target.Name} in the stomach!!!");
-            }
-            return Finaldam;
+            Console.WriteLine($"{Name}'s initial lifespan was {lifePont}");
+            lifePont -= damageAfterDefense;
+            Console.WriteLine($"{Name} took {damageAfterDefense:F1} damage.");
+            Console.WriteLine($"{Name}'s final lifespan is {lifePont}");
         }
 
     }
