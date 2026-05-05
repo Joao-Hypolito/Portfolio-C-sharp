@@ -28,11 +28,27 @@ namespace Batalha_Primeira_Era.Core
     {
         void ranged(); // Habilidade de Disparo
     }
+
+    public interface IGreat_Sword
+    {
+        void GreatSword(); // Habilidade de usar espadas grandes
+    }
+
+    public interface IHeavy_Sword
+    {
+        void HeavySword(); // Habilidade de usar armas de duas mãos
+    }
+
+    public interface ISword
+    {
+        void Sword(); // Habilidade de usar escudo
+    }
+
     public abstract class Character
     {
         public string Name { get; set; }
         public float lifePont { get; protected set; }
-        public float Defense { get; set; }
+        public float Armor { get; set; }
         public int Strength { get; set; }
         public int Dexterity {  get; set; }
         public int Knowledge { get; set; }
@@ -42,7 +58,7 @@ namespace Batalha_Primeira_Era.Core
         {
             Name = name;
             lifePont = life;
-            Defense = defense;
+            Armor = defense;
             Strength = strength;
             Dexterity = dexterity;
             Knowledge = knowlegde;
@@ -64,15 +80,15 @@ namespace Batalha_Primeira_Era.Core
         }
 
         /// <summary>
-        /// Processa o dano recebido pelo personagem, aplicando reduções baseadas na defesa.
+        /// Processa o dano recebido pelo personagem, aplicando reduções baseadas na armadura.
         /// </summary>
         /// <param name="target">O personagem que receberá o ataque.</param>
         public virtual void ReceiveDamage(float damage)
         {
-            //Aplica a "Redução de Dano", a defesa do personagem anula o dano na proporção de 50% do valor de Defesa
-            float damageAfterDefense = damage - (this.Defense / 2);
+            //Aplica a "Redução de Dano", a armadura do personagem anula o dano na proporção de 50% do valor de armadura
+            float damageAfterDefense = damage - (this.Armor / 2);
 
-            //Garante que o dano nunca seja negativo, sem isso, se a sua defesa fosse muito alta, você seria curado ao levar um golpe
+            //Garante que o dano nunca seja negativo, sem isso, se a sua armadura fosse muito alta, você seria curado ao levar um golpe
             if (damageAfterDefense < 0) damageAfterDefense = 0;
 
             Console.WriteLine($"{Name}'s initial lifespan was {lifePont}");
