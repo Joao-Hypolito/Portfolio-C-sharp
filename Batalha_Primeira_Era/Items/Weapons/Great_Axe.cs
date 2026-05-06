@@ -6,13 +6,15 @@ namespace Batalha_Primeira_Era.Items.Weapons
 {
     public class Great_Axe: Weapon
     {
-        public Great_Axe(string name, float baseDamage,   int reStrength, int reDexterity, int reKnowledge) : 
-            base (name, baseDamage, reStrength, reDexterity, reKnowledge) { }
+        public Great_Axe(string name, float baseDamage, int reStrength, int reDexterity, int reKnowledge) :
+            base(name, baseDamage, reStrength, reDexterity, reKnowledge)
+        { }
 
         public override float CalculateDamage(Batalha_Primeira_Era.Core.Character wielder)
         {
-            float variation = new Random().Next(90, 110) / 100f;
-            return (BaseDamage + (wielder.Strength * 1.5f)) * variation;
+            Use();
+
+            return (CurrentDamage + (wielder.Strength * 1.5f));
         }
 
 

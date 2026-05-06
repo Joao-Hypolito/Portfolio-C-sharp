@@ -14,12 +14,13 @@ namespace Batalha_Primeira_Era
             Grazing GrazingDragon = new Grazing("Grazing", 80f, 10, 9, 30);
             DragonGaze Gaze = new DragonGaze("Glaurung", 0f, 0, 0, 0);
 
-            Rogue frodo = new Rogue("Frodo", 100f, 100, 40, 23, 15, sting);
+            Rogue frodo = new Rogue("Frodo", 100f, 100, 40, 50, 15, sting);
             Wizard galadriel = new Wizard("Galadriel", 90f, 70, 14, 17, 57, staffinitial);
             Dragon glaurung = new Dragon("Glaurung", 100f, 80, 50, 30, 40, Gaze);
 
             glaurung.LifeMultiplier(glaurung);
 
+            frodo.TakeAction(glaurung);
             frodo.TakeAction(glaurung);
             galadriel.TakeAction(glaurung);
 

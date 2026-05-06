@@ -71,12 +71,22 @@ namespace Batalha_Primeira_Era.Core
         /// <param name="target">O personagem que receberá o ataque.</param>
         public void TakeAction (Character target)
         {
-            //Ele delega a responsabilidade do calculo para o objeto(EquippedWeapon). O uso do "this" passa o personagem atual para a arma.
-            float finalDamage = EquippedWeapon.CalculateDamage(this);
+            if (EquippedWeapon != null)
+            {
+                if (EquippedWeapon.IsBroken)
+                {
+                    Console.WriteLine($"{Name} tried to attack, but the weapon broke! Damage reduced.");
+                }
+                else
+                {
+                    //Ele delega a responsabilidade do calculo para o objeto(EquippedWeapon). O uso do "this" passa o personagem atual para a arma.
+                    float finalDamage = EquippedWeapon.CalculateDamage(this);
 
-            //Depois do Feedback do sistema (A interface), ele chama o "ReceiveDamage" do alvo, passando o valor calculado anteriormente.
-            Console.WriteLine($"\n{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
-            target.ReceiveDamage(finalDamage);
+                    //Depois do Feedback do sistema (A interface), ele chama o "ReceiveDamage" do alvo, passando o valor calculado anteriormente.
+                    Console.WriteLine($"\n{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
+                    target.ReceiveDamage(finalDamage);
+                }
+            }
         }
 
         /// <summary>

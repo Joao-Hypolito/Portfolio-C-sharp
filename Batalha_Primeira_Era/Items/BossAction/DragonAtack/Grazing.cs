@@ -10,7 +10,8 @@ namespace Batalha_Primeira_Era.Items.BossAction.DragonAtack
     public class Grazing: Weapon
     {
         public Grazing(string name, float baseDamage, int reStrength, int reDexterity, int reKnowledge) :
-            base(name, baseDamage, reStrength, reDexterity, reKnowledge){ }
+            base(name, baseDamage, reStrength, reDexterity, reKnowledge)
+        { }
         
 
         public override float CalculateDamage(Character wielder)
