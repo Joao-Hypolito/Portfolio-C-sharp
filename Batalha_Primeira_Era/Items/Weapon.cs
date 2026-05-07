@@ -38,6 +38,9 @@ namespace Batalha_Primeira_Era.Items.Weapons
         }
         public abstract float CalculateDamage(Batalha_Primeira_Era.Core.Character wielder);
 
+        /// <summary>
+        /// Reduz a durabilidade da arma a cada uso. Se chegar a valores negativos, trava em zero.
+        /// </summary>
         public void Use()
         {
             if (Durability > 0)
@@ -46,6 +49,10 @@ namespace Batalha_Primeira_Era.Items.Weapons
                 if (Durability < 0) Durability = 0;
             }
         }
+        /// <summary>
+        /// Calcula o dano atual da arma com base no seu estado de conservação. 
+        /// Retorna 0 se quebrada ou 70% do dano se a durabilidade estiver baixa (abaixo de 30).
+        /// </summary>
         public float CurrentDamage
         {
             get
