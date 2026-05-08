@@ -16,7 +16,7 @@ namespace Batalha_Primeira_Era.Core.Heroes
 
         }
 
-        public void melee()
+        public void Melee()
         {
 
         }

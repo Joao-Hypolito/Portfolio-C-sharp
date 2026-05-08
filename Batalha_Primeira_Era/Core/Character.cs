@@ -9,6 +9,10 @@ namespace Batalha_Primeira_Era.Core
     // ============================================================
     // CONTRATOS (Interfaces): O que o personagem PODE FAZER
     // ============================================================
+    public interface ITheft
+    {
+        void Theft();
+    }
     public interface IAgile
     {
         void Dodge(); // Habilidade de Esquiva
@@ -21,12 +25,12 @@ namespace Batalha_Primeira_Era.Core
 
     public interface IMelee
     {
-        void melee(); // Habilidade corpo a corpo
+        void Melee(); // Habilidade corpo a corpo
     }
 
     public interface IRanged
     {
-        void ranged(); // Habilidade de Disparo
+        void Ranged(); // Habilidade de Disparo
     }
 
     public interface IGreat_Sword
@@ -39,9 +43,9 @@ namespace Batalha_Primeira_Era.Core
         void HeavySword(); // Habilidade de usar armas de duas mãos
     }
 
-    public interface ISword
+    public interface IShield
     {
-        void Sword(); // Habilidade de usar escudo
+        void Shield(); // Habilidade de usar escudo
     }
 
     public abstract class Character
