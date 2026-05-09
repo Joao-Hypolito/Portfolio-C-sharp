@@ -17,36 +17,5 @@ namespace Batalha_Primeira_Era.Core.Bosses
             lifePont *= 10;
         }
 
-        public float DragonParts(Character target)
-        {
-            float Finaldam = this.Strength;
-
-            Random random = new Random();
-            int Raffle = random.Next(1, 101);
-
-            if (Raffle <= 50)
-            {
-                Finaldam = Strength * 1;
-                Console.WriteLine($"\n{Name} hit the {target.Name} scale right!!!");
-            }
-            else if (Raffle <= 70)
-            {
-                Finaldam = Strength * 2;
-                Console.WriteLine($"\n{Name} hit {target.Name} in the neck!!!");
-            }
-            else if (Raffle <= 90)
-            {
-                Finaldam = Strength * 5;
-                Console.WriteLine($"\n{Name} hit {target.Name} in the head!!!");
-            }
-            else
-            {
-                Finaldam = Strength * 8;
-                Console.WriteLine($"\n {Name} hit {target.Name} in the stomach!!!");
-            }
-            return Finaldam;
-        }
-
-
     }
 }
