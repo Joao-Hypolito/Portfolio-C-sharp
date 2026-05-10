@@ -12,6 +12,13 @@ namespace Batalha_Primeira_Era.Core.Bosses
         {
         }
 
+        public override List<BodyPart> GetTargetTableParts()
+        {
+            var parts = base.GetTargetTableParts();
+            parts.Add(BodyPart.Wings);
+            parts.Add(BodyPart.Belly);
+            return parts;
+        }
         public void LifeMultiplier(Character target)
         {
             lifePont *= 10;

@@ -12,7 +12,7 @@ namespace Batalha_Primeira_Era
             Dagger sting = new Dagger("Sting", 97f, 10, 10, 10);
             Staff staffinitial = new Staff("Staff", 80f, 10, 9, 30);
             Grazing GrazingDragon = new Grazing("Grazing", 80f, 10, 9, 30);
-            DragonGaze Gaze = new DragonGaze("Glaurung", 0f, 0, 0, 0);
+            DragonGaze Gaze = new DragonGaze("Dragon Gaze", 0f, 0, 0, 0);
 
             Rogue frodo = new Rogue("Frodo", 100f, 100, 40, 50, 15, sting);
             Wizard galadriel = new Wizard("Galadriel", 90f, 70, 14, 17, 57, staffinitial);

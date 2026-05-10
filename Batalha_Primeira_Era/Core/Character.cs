@@ -9,15 +9,14 @@ namespace Batalha_Primeira_Era.Core
     // ============================================================
     // CONTRATOS (Interfaces): O que o personagem PODE FAZER
     // ============================================================
-    public interface ITheft
-    {
-        void Theft();
-    }
-
     public interface IDamageable
     {
         void ReceiveDamage(float damage, Character.BodyPart randomPart); // Tornar tangivel a dano qualquer tipo de alvo
         string Name { get; } // Para poder usar o nome no console
+    }
+    public interface ITheft
+    {
+        void Theft();
     }
     public interface IAgile
     {
@@ -71,37 +70,48 @@ namespace Batalha_Primeira_Era.Core
         }
 
         //Uma lista de palavras que valem números, util para aliviar a memória e impede erros
-        public enum BodyPart { Head, Torso, Legs, Arms, Wings}
+        public enum BodyPart { Head, Torso, Legs, Arms, Wings, Belly}       
+            public virtual List<BodyPart> GetTargetTableParts()
+            {
+                return new List<BodyPart> {BodyPart.Head, BodyPart.Torso, BodyPart.Arms, BodyPart.Legs };
+            }
+
 
         /// <summary>
-        /// Um método publico (define uma acao publica), o parâmetro indica que o método espera receber um do tipo Personagem.
+        /// Um método publico (define uma acao publica), o parâmetro indica que o método espera receber um do tipo alvo.
         /// </summary>
-        /// <param name="target">O personagem que receberá o ataque.</param>
-        public void TakeAction (IDamageable target)
+        /// <param Idamageable="target">O alvo que receberá o ataque.</param>
+        public void TakeAction(IDamageable target)
         {
             Random rng = new Random();
 
-            //Pega todos os nomes da lista BodyPart e joga num "saco"
-            Array values = Enum.GetValues(typeof(BodyPart));
 
-            //Pega o valor que está naquela posicao que está no "saco"
-            BodyPart randomPart = (BodyPart)values.GetValue(new Random().Next(values.Length));
+            if (target is Character targetCharacter)
+            {
+                // 2. Chamamos o método que criamos! Ele já vem com as partes certas (com ou sem asas)
+                List<BodyPart> availableParts = targetCharacter.GetTargetTableParts();
+
+                // 3. Sorteamos um índice baseado no tamanho da lista que recebemos
+                int index = rng.Next(availableParts.Count);
+                BodyPart randomPart = availableParts[index];
+
 
             if (EquippedWeapon != null)
-            {
-                if (EquippedWeapon.IsBroken)
                 {
-                    Console.WriteLine($"{Name} tried to attack, but the weapon broke! Damage reduced.");
-                }
-                else
-                {
-                    //Ele delega a responsabilidade do calculo para o objeto(EquippedWeapon). O uso do "this" passa o personagem atual para a arma.
-                    float rawDamage = EquippedWeapon.CalculateDamage(this);
+                    if (EquippedWeapon.IsBroken)
+                    {
+                        Console.WriteLine($"{Name} tried to attack, but the weapon broke! Damage reduced.");
+                    }
+                    else
+                    {
+                        //Ele delega a responsabilidade do calculo para o objeto(EquippedWeapon). O uso do "this" passa o personagem atual para a arma.
+                        float rawDamage = EquippedWeapon.CalculateDamage(this);
 
-                    //Depois do Feedback do sistema (A interface), ele chama o "ReceiveDamage" do alvo, passando o valor calculado anteriormente.
-                    Console.WriteLine($"\n{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
-                    Console.WriteLine($"Part of the body affected: {randomPart}");
-                    target.ReceiveDamage(rawDamage, randomPart);
+                        //Depois do Feedback do sistema (A interface), ele chama o "ReceiveDamage" do alvo, passando o valor calculado anteriormente.
+                        Console.WriteLine($"\n{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
+                        Console.WriteLine($"Part of the body affected: {randomPart}");
+                        target.ReceiveDamage(rawDamage, randomPart);
+                    }
                 }
             }
         }
@@ -109,7 +119,7 @@ namespace Batalha_Primeira_Era.Core
         /// <summary>
         /// Processa o dano recebido pelo personagem, aplicando reduções baseadas na armadura.
         /// </summary>
-        /// <param name="target">O personagem que receberá o ataque.</param>
+        /// <param BodyPart="hitPart">O personagem que receberá o ataque.</param>
         public virtual void ReceiveDamage(float damage, BodyPart hitPart)
         {
             //Adiciona um multiplicador com base em qual parte do corpo for atingida
@@ -136,6 +146,7 @@ namespace Batalha_Primeira_Era.Core
         {
             return part switch
             {
+                BodyPart.Belly => 3.0f,
                 BodyPart.Head => 2.0f,
                 BodyPart.Torso => 1.0f,
                 BodyPart.Wings => 1.5f,
