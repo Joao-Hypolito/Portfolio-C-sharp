@@ -1,12 +1,12 @@
-🛠️ C# Core Labs: Dominando POO
-Uma coleção de sistemas práticos desenvolvidos para consolidar os pilares da Programação Orientada a Objetos em C#.
+🛠️ C# Core Labs: Dominating OOP
+A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
 
-🧬 1. Projeto Biodiversidade (Gestão de Seres Vivos)
-Focado em Abstração e Polimorfismo, simulando nichos ecológicos.
+🧬 1. Biodiversity Project (Biological System Management)
+Focused on Abstraction and Polymorphism, simulating ecological niches.
 
-Destaque: Uso de abstract class e override para comportamentos específicos (sons/movimentos).
+Highlight: Use of abstract classes and method overriding for specific behaviors (sounds/movement).
 
-Técnica: Implementação de Type Casting (is/as) para manipular coleções genéricas de subclasses.
+Technique: Implementation of Type Casting (is/as) to handle generic collections of subclasses.      
 
 📚 2. Sistema Biblioteca (Gestão de Acervo)
 Focado em Encapsulamento e Estrutura de Dados.
