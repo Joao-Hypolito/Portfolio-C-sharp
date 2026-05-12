@@ -8,12 +8,12 @@ Highlight: Use of abstract classes and method overriding for specific behaviors 
 
 Technique: Implementation of Type Casting (is/as) to handle generic collections of subclasses.      
 
-📚 2. Sistema Biblioteca (Gestão de Acervo)
-Focado em Encapsulamento e Estrutura de Dados.
+📚 2. Library System (Collection Management)
+Focused on Encapsulation and Data Structures.
 
-Destaque: Organização de classes para empréstimos, usuários e títulos.
+Highlight: Organization of classes for loans, users, and titles.
 
-Técnica: Gestão de estados (disponibilidade de itens) e integridade de dados via modificadores de acesso.
+Technique: State management (item availability) and data integrity via access modifiers.
 
 🍽️ 3. Sistema Restaurante (Controle de Pedidos)
 Focado em Lógica de Fluxo e Instanciação.
