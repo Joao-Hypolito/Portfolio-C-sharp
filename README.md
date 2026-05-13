@@ -15,12 +15,12 @@ Highlight: Organization of classes for loans, users, and titles.
 
 Technique: State management (item availability) and data integrity via access modifiers.
 
-🍽️ 3. Sistema Restaurante (Controle de Pedidos)
-Focado em Lógica de Fluxo e Instanciação.
+🍽️ 3. Restaurant System (Order Control)
+Focused on Flow Logic and Instantiation.
 
-Destaque: Modelagem de mesas, pedidos e faturamento.
+Highlight: Modeling of tables, orders, and billing.
 
-Técnica: Relacionamento entre objetos (agregação) e manipulação de listas dinâmicas em tempo de execução.
+Technique: Relationship between objects (aggregation) and manipulation of dynamic lists at runtime.
 
 🤖 4. Exército Decepticon (Gestão de Unidades de Combate)
 Focado em Associação de Objetos: Agregação vs. Composição.
