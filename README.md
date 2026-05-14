@@ -1,33 +1,33 @@
 🛠️ C# Core Labs: Dominating OOP
 A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
 
-🧬 1. Biodiversity Project (Biological System Management)
-Focused on Abstraction and Polymorphism, simulating ecological niches.
+🧬 1. Biodiversity Project (Ecological System Simulation)
+Focus: Abstraction and Polymorphism within ecological niches.
 
-Highlight: Use of abstract classes and method overriding for specific behaviors (sounds/movement).
+Highlight: Use of Abstract Classes and Method Overriding to define specific biological behaviors (e.g., vocalization and movement).
 
-Technique: Implementation of Type Casting (is/as) to handle generic collections of subclasses.      
+Technique: Implementing Type Casting (is / as) to safely manage and interact with generic collections of subclasses.     
 
-📚 2. Library System (Collection Management)
-Focused on Encapsulation and Data Structures.
+📚 2. Library System (Inventory & Loan Management)
+Focus: Encapsulation and Data Integrity.
 
-Highlight: Organization of classes for loans, users, and titles.
+Highlight: Structured class hierarchy for managing loans, users, and book titles.
 
-Technique: State management (item availability) and data integrity via access modifiers.
+Technique: State Management (item availability) and enforcement of business rules via Access Modifiers (private/protected).
 
-🍽️ 3. Restaurant System (Order Control)
-Focused on Flow Logic and Instantiation.
+🍽️ 3. Restaurant System (Order & Billing Control)
+Focus: Program Flow and Object Instantiation.
 
-Highlight: Modeling of tables, orders, and billing.
+Highlight: Real-world modeling of tables, customer orders, and automated billing.
 
-Technique: Relationship between objects (aggregation) and manipulation of dynamic lists at runtime.
+Technique: Object Composition and runtime manipulation of Dynamic Lists (List<T>) for real-time order processing.
 
-🤖 4. Exército Decepticon (Gestão de Unidades de Combate)
-Focado em Associação de Objetos: Agregação vs. Composição.
+🤖 4. Decepticon Arm (Combat Management Units)
+Focus: Object Association (Aggregation vs. Composition).
 
-Destaque: Modelagem de hierarquia militar e robôs combinadores (Combiners).
+Highlight: Modeling military hierarchy and combiner bots.
 
-Técnica: Implementação de relacionamentos fortes (Composição) para membros fixos do corpo e relacionamentos fracos (Agregação) para liderança dinâmica.
+Technique: implementing Strong Relationships (Composition) for fixed body members and Weak relationships (Aggregation) for dynamics leadership.
 
 🛡️ 5. Escaneamento Terrorcon (Protocolo de Aquisição de Alvos)
 Focado em Tomada de Decisão e Lógica de Seleção de Hardware.
