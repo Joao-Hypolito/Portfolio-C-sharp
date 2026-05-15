@@ -29,12 +29,12 @@ Highlight: Modeling military hierarchy and combiner bots.
 
 Technique: implementing Strong Relationships (Composition) for fixed body members and Weak relationships (Aggregation) for dynamics leadership.
 
-🛡️ 5. Escaneamento Terrorcon (Protocolo de Aquisição de Alvos)
-Focado em Tomada de Decisão e Lógica de Seleção de Hardware.
+🛡️ 5. Scanning Terrorcon (Target Acquisition Protocol)
+Focus: Decision selection logic and decision-making.
 
-Destaque: Implementação de um motor de avaliação multicritério (Combustível, Ano e Estética) para seleção de disfarces robóticos.
+Highlight: Implementing a multi-criteria evaluation engine (fuel, year, and aesthetics) for selecting "Robots in Disguise".
 
-Técnica: Uso de Classes Abstratas para definição de contratos de verificação e lógica de Acúmulo/Penalidade de Score, incluindo filtragem de strings com sanitização de dados (ToLower) para validação de compatibilidade de chassi.
+Technique: Use of Abstract Classes to define verification contracts and Score/Penalty logic. Includes string filtering with data sanitization (ToLower()) for chassis compatibility validation.
 
 ⚔️ 6. Crônicas da Primeira Era (Simulador de Combate Tático)
 Focado em Lógica de Jogo, Aleatoriedade (Randomização) e Herança Avançada.
