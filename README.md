@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🛠️ C# Core Labs: Dominating OOP A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
 
 🧬 1. Biodiversity Project (Ecological System Simulation) Focus: Abstraction and Polymorphism within ecological niches.
@@ -7,11 +8,26 @@ Highlight: Use of Abstract Classes and Method Overriding to define specific biol
 Technique: Implementing Type Casting (is / as) to safely manage and interact with generic collections of subclasses.
 
 📚 2. Library System (Inventory & Loan Management) Focus: Encapsulation and Data Integrity.
+=======
+🛠️ C# Core Labs: Dominating OOP
+A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
+
+🧬 1. Biodiversity Project (Ecological System Simulation)
+Focus: Abstraction and Polymorphism within ecological niches.
+
+Highlight: Use of Abstract Classes and Method Overriding to define specific biological behaviors (e.g., vocalization and movement).
+
+Technique: Implementing Type Casting (is / as) to safely manage and interact with generic collections of subclasses.     
+
+📚 2. Library System (Inventory & Loan Management)
+Focus: Encapsulation and Data Integrity.
+>>>>>>> 061a640a40df20480d0bacf80fbd469afe0381a8
 
 Highlight: Structured class hierarchy for managing loans, users, and book titles.
 
 Technique: State Management (item availability) and enforcement of business rules via Access Modifiers (private/protected).
 
+<<<<<<< HEAD
 🍽️ 3. Restaurant System (Order & Billing Control) Focus: Program Flow and Object Instantiation.
 
 Highlight: Real-world modeling of tables, customer orders, and automated billing.
@@ -19,18 +35,39 @@ Highlight: Real-world modeling of tables, customer orders, and automated billing
 Technique: Object Composition and runtime manipulation of Dynamic Lists (List) for real-time order processing.
 
 🤖 4. Decepticon Arm (Combat Management Units) Focus: Object Association (Aggregation vs. Composition).
+=======
+🍽️ 3. Restaurant System (Order & Billing Control)
+Focus: Program Flow and Object Instantiation.
+
+Highlight: Real-world modeling of tables, customer orders, and automated billing.
+
+Technique: Object Composition and runtime manipulation of Dynamic Lists (List<T>) for real-time order processing.
+
+🤖 4. Decepticon Arm (Combat Management Units)
+Focus: Object Association (Aggregation vs. Composition).
+>>>>>>> 061a640a40df20480d0bacf80fbd469afe0381a8
 
 Highlight: Modeling military hierarchy and combiner bots.
 
 Technique: implementing Strong Relationships (Composition) for fixed body members and Weak relationships (Aggregation) for dynamics leadership.
 
+<<<<<<< HEAD
 🛡️ 5. Scanning Terrorcon (Target Acquisition Protocol) Focus: Decision selection logic and decision-making.
+=======
+🛡️ 5. Scanning Terrorcon (Target Acquisition Protocol)
+Focus: Decision selection logic and decision-making.
+>>>>>>> 061a640a40df20480d0bacf80fbd469afe0381a8
 
 Highlight: Implementing a multi-criteria evaluation engine (fuel, year, and aesthetics) for selecting "Robots in Disguise".
 
 Technique: Use of Abstract Classes to define verification contracts and Score/Penalty logic. Includes string filtering with data sanitization (ToLower()) for chassis compatibility validation.
 
+<<<<<<< HEAD
 ⚔️ 6. Chronicles of the First Age (Tactical Combat Simulator) Focus: On Game Logic, Randomness, and Advanced Inheritance.
+=======
+⚔️ 6. Chronicles of the First Age (Tactical Combat Simulator)
+Focus: On Game Logic, Randomness, and Advanced Inheritance.
+>>>>>>> 061a640a40df20480d0bacf80fbd469afe0381a8
 
 Highlight: Implementation of a turn-based battle engine inspired by Tolkien's Legendarium (The Silmarillion), simulating the epic clash between heroes of Middle-earth and the forces of Morgoth.
 
