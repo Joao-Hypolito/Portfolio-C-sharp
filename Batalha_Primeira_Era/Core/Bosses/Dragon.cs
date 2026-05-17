@@ -8,10 +8,9 @@ namespace Batalha_Primeira_Era.Core.Bosses
 {
     public class Dragon : Character
     {
-        public Dragon(string name, float life, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, defense, strength, dexterity, knowlegde, wielder)
+        public Dragon(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
         {
         }
-
         public override List<BodyPart> GetTargetTableParts()
         {
             var parts = base.GetTargetTableParts();

@@ -7,7 +7,7 @@ namespace Batalha_Primeira_Era.Core.Heroes
 {
     public class Archer : Character, IRanged, IAgile
     {
-        public Archer(string name, float life, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, defense, strength, dexterity, knowlegde, wielder)
+        public Archer(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
         {
         }
 

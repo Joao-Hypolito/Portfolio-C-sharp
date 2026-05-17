@@ -1,54 +1,46 @@
-🛠️ C# Core Labs: Dominando POO
-Uma coleção de sistemas práticos desenvolvidos para consolidar os pilares da Programação Orientada a Objetos em C#.
+🛠️ C# Core Labs: Dominating OOP A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
 
-🧬 1. Projeto Biodiversidade (Gestão de Seres Vivos)
-Focado em Abstração e Polimorfismo, simulando nichos ecológicos.
+🧬 1. Biodiversity Project (Ecological System Simulation) Focus: Abstraction and Polymorphism within ecological niches.
 
-Destaque: Uso de abstract class e override para comportamentos específicos (sons/movimentos).
+Highlight: Use of Abstract Classes and Method Overriding to define specific biological behaviors (e.g., vocalization and movement).
 
-Técnica: Implementação de Type Casting (is/as) para manipular coleções genéricas de subclasses.
+Technique: Implementing Type Casting (is / as) to safely manage and interact with generic collections of subclasses.
 
-📚 2. Sistema Biblioteca (Gestão de Acervo)
-Focado em Encapsulamento e Estrutura de Dados.
+📚 2. Library System (Inventory & Loan Management) Focus: Encapsulation and Data Integrity.
 
-Destaque: Organização de classes para empréstimos, usuários e títulos.
+Highlight: Structured class hierarchy for managing loans, users, and book titles.
 
-Técnica: Gestão de estados (disponibilidade de itens) e integridade de dados via modificadores de acesso.
+Technique: State Management (item availability) and enforcement of business rules via Access Modifiers (private/protected).
 
-🍽️ 3. Sistema Restaurante (Controle de Pedidos)
-Focado em Lógica de Fluxo e Instanciação.
+🍽️ 3. Restaurant System (Order & Billing Control) Focus: Program Flow and Object Instantiation.
 
-Destaque: Modelagem de mesas, pedidos e faturamento.
+Highlight: Real-world modeling of tables, customer orders, and automated billing.
 
-Técnica: Relacionamento entre objetos (agregação) e manipulação de listas dinâmicas em tempo de execução.
+Technique: Object Composition and runtime manipulation of Dynamic Lists (List) for real-time order processing.
 
-🤖 4. Exército Decepticon (Gestão de Unidades de Combate)
-Focado em Associação de Objetos: Agregação vs. Composição.
+🤖 4. Decepticon Arm (Combat Management Units) Focus: Object Association (Aggregation vs. Composition).
 
-Destaque: Modelagem de hierarquia militar e robôs combinadores (Combiners).
+Highlight: Modeling military hierarchy and combiner bots.
 
-Técnica: Implementação de relacionamentos fortes (Composição) para membros fixos do corpo e relacionamentos fracos (Agregação) para liderança dinâmica.
+Technique: implementing Strong Relationships (Composition) for fixed body members and Weak relationships (Aggregation) for dynamics leadership.
 
-🛡️ 5. Escaneamento Terrorcon (Protocolo de Aquisição de Alvos)
-Focado em Tomada de Decisão e Lógica de Seleção de Hardware.
+🛡️ 5. Scanning Terrorcon (Target Acquisition Protocol) Focus: Decision selection logic and decision-making.
 
-Destaque: Implementação de um motor de avaliação multicritério (Combustível, Ano e Estética) para seleção de disfarces robóticos.
+Highlight: Implementing a multi-criteria evaluation engine (fuel, year, and aesthetics) for selecting "Robots in Disguise".
 
-Técnica: Uso de Classes Abstratas para definição de contratos de verificação e lógica de Acúmulo/Penalidade de Score, incluindo filtragem de strings com sanitização de dados (ToLower) para validação de compatibilidade de chassi.
+Technique: Use of Abstract Classes to define verification contracts and Score/Penalty logic. Includes string filtering with data sanitization (ToLower()) for chassis compatibility validation.
 
-⚔️ 6. Crônicas da Primeira Era (Simulador de Combate Tático)
-Focado em Lógica de Jogo, Aleatoriedade (Randomização) e Herança Avançada.
+⚔️ 6. Chronicles of the First Age (Tactical Combat Simulator) Focus: On Game Logic, Randomness, and Advanced Inheritance.
 
-Destaque: Implementação de um motor de batalha por turnos inspirado no Legendarium de Tolkien (Silmarillion), simulando o embate épico entre heróis da Terra-Média e as forças de Morgoth.
+Highlight: Implementation of a turn-based battle engine inspired by Tolkien's Legendarium (The Silmarillion), simulating the epic clash between heroes of Middle-earth and the forces of Morgoth.
 
-Arquitetura: Implementação de Inversão de Dependência, onde o cálculo de dano é delegado para classes de armas abstratas. Isso permite que o motor de combate seja extensível: novas armas e modificadores podem ser adicionados sem alterar o código base das entidades
+Architecture: Implementation of Dependency Inversion, where damage calculation is delegated to abstract weapon classes. This allows the combat engine to be extensible: new weapons and modifiers can be added without altering the base code of the entities.
 
-Técnica: Polimorfismo e Sobrescrita (override): Cada classe (Guerreiro, Mago, Dragão) herda da base Personagem e reimplementa o método RealizarAcao, permitindo que um Guerreiro use força bruta enquanto um Dragão utiliza um sistema de sorteio para ataques de chamas.
+Technique: Polymorphism and Override: Each class (Warrior, Mage, Dragon) inherits from the Character base and reimplements the PerformAction method, allowing a Warrior to use brute force while a Dragon uses a randomization system for flame attacks.
 
-Mecânica de Status: Desenvolvimento de habilidades passivas e ativas, como o "Olhar do Dragão", que utiliza lógica probabilística para aplicar efeitos de controle (terror) nos alvos, e o "Multiplicador de Vida", que demonstra a manipulação dinâmica de atributos em tempo de execução.
+Status Mechanics: Development of passive and active skills, such as "Dragon's Gaze," which uses probabilistic logic to apply control (terror) effects to targets, and "Life Multiplier," which demonstrates the dynamic manipulation of attributes at runtime.
 
-🏛️ 7. Digital-Twin-Greenhouse-Simulator (Gêmeo Digital de Estufa IoT)
-Focado em Virtualização de Hardware, Simulação Estocástica e Resiliência de Sistemas.
+🏛️ 7. Digital-Twin-Greenhouse-Simulator (Gêmeo Digital de Estufa IoT) Focado em Virtualização de Hardware, Simulação Estocástica e Resiliência de Sistemas.
 
 Destaque: Desenvolvimento de um simulador de alta fidelidade para substituir sensores físicos instáveis, garantindo a integridade do fluxo de dados para integração com SQL e Dashboards.
 
@@ -58,8 +50,7 @@ Protocolo de Injeção de Ruído: Criação de um motor de estresse para simular
 
 Feedback Loop: Modelagem de controle em tempo real onde o estado do "Atuador" (Ventilador/Aquecedor) influencia dinamicamente a tendência de subida ou descida da variável simulada, criando um ecossistema autoajustável.
 
-🚀 Tecnologias e Conceitos
-Linguagem: C# (.NET 10.0)
+🚀 Tecnologias e Conceitos Linguagem: C# (.NET 10.0)
 
 Conceitos: Classes Abstratas, Herança, Polimorfismo, Encapsulamento e Type Casting.
 

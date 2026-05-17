@@ -16,7 +16,7 @@ namespace Batalha_Primeira_Era.Core
     }
     public interface ITheft
     {
-        void Theft();
+        void Theft(); // Habilida de Furto
     }
     public interface IAgile
     {
@@ -48,25 +48,67 @@ namespace Batalha_Primeira_Era.Core
         void Shield(); // Habilidade de usar escudo
     }
 
+    public interface IDiscernment
+    {
+        void Wraiths();
+    }
+
+
     public abstract class Character : IDamageable
     {
         public string Name { get; set; }
         public float lifePont { get; protected set; }
+
+        // Garante que os pontos de discernimento tenham o limite de 0 a 99
+        private int _spectralInsight = 0;
+        public int SpectralInsight
+        {
+            get => _spectralInsight;
+            set => _spectralInsight = Math.Clamp(value, 0, 99); 
+        }
         public float Armor { get; set; }
-        public int Strength { get; set; }
-        public int Dexterity {  get; set; }
-        public int Knowledge { get; set; }
+
+        // Garante que os pontos de forca tenham o limite de 0 a 99
+        private int _Strength = 0;
+        public int Strength 
+        {          
+        get => _Strength;
+        set => _Strength = Math.Clamp(value, 0, 99); 
+        }
+
+        // Garante que os pontos de destreza tenham o limite de 0 a 99
+        private int _Dexterity = 0;
+        public int Dexterity
+        {
+            get => _Dexterity;
+            set => _Dexterity = Math.Clamp(value, 0, 99); 
+        }
+
+        // Garante que os pontos de conhecimento tenham o limite de 0 a 99
+        private int _Knowledge = 0;
+        public int Knowledge
+        {
+            get => _Knowledge;
+            set => _Knowledge = Math.Clamp(value, 0, 99);
+        }
         public Weapon EquippedWeapon { get; set; }
 
-        public Character(string name, float life, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) 
+        public Character(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) 
         {
             Name = name;
             lifePont = life;
+            SpectralInsight = insight;
             Armor = defense;
             Strength = strength;
             Dexterity = dexterity;
             Knowledge = knowlegde;
             EquippedWeapon = wielder;
+        }
+
+        // Método para verificar se este ser consegue interagir com o Reino Espectral
+        public bool CanPerceiveWraiths()
+        {
+            return SpectralInsight >= 50;
         }
 
         //Uma lista de palavras que valem números, util para aliviar a memória e impede erros
