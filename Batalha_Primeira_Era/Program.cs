@@ -15,7 +15,7 @@ namespace Batalha_Primeira_Era
             Grazing GrazingDragon = new Grazing("Grazing", 80f, 10, 9, 30);
             DragonGaze Gaze = new DragonGaze("Dragon Gaze", 0f, 0, 0, 0);
 
-            Rogue frodo = new Rogue("Frodo", 100f, 20, 20, 40, 50, 15, sting);
+            Rogue frodo = new Rogue("Frodo", 100f, 60, 20, 40, 50, 15, sting);
             Wizard galadriel = new Wizard("Galadriel", 90f, 70, 70, 14, 17, 57, staffinitial);
             Dragon glaurung = new Dragon("Glaurung", 100f, 78, 80, 50, 30, 40, Gaze);
             Spectrum nazgul = new Spectrum("Agnmar", 100f, 78, 80, 45, 78, 67, morgul);
