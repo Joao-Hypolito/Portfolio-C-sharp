@@ -5,20 +5,34 @@ using System.Text;
 
 namespace Batalha_Primeira_Era.Core.Heroes
 {
-    public class Archer : Character, IRanged, IAgile
+    public class Archer : Character, IRanged<Bow>, IDagger<Dagger>, IAgile
     {
-        public Archer(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
+        public Bow equippedBow { get; set; }
+        public Dagger equippedDagger { get; set; }
+        public Archer(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Bow wielder) : 
+            base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
         {
+            equippedBow = wielder;
+        }
+        public Archer(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Dagger wielder) :
+        base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
+        {
+            equippedDagger = wielder;
         }
 
-        public void Ranged()
+        public void Dodge() => Console.WriteLine($"{Name} vanished into the shadows and dodged!");
+        public override void ReceiveDamage(float damage, BodyPart hitPart)
         {
+            if(new Random().NextDouble() < 0.3)
+            {
+                Dodge();
+                Console.WriteLine($"{Name} suffered no damage!");
+            }
+            else
+            {
 
-        }
-
-        public void Dodge()
-        {
-
+                    base.ReceiveDamage(damage, hitPart);              
+            }
         }
     }
 }

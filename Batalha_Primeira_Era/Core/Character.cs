@@ -28,26 +28,38 @@ namespace Batalha_Primeira_Era.Core
         void CastSpell(); // Habilidade Mágica
     }
 
-    public interface IMelee
+    public interface IRanged<T> where T : Weapon
     {
-        void Melee(); // Habilidade corpo a corpo
+        T equippedBow { get; set; }
     }
 
-    public interface IRanged
+    // Interface para combate corpo a corpo (Ladinos, Guerreiros)
+    public interface IDagger<T> where T : Weapon
     {
-        void Ranged(); // Habilidade de Disparo
+        T equippedDagger { get; set; } // Ou equippedSword, etc.
     }
 
-    public interface IHeavy_Sword
+    public interface IGreat_Sword<T> where T : Weapon
     {
-        void HeavySword(); // Habilidade de usar armas de duas mãos
+        T equippedGreat_Sword { get; set; } // Ou equippedSword, etc.
     }
 
-    public interface IShield
+    public interface IGreat_Axe<T> where T : Weapon
     {
-        void Shield(); // Habilidade de usar escudo
+        T equippedGreat_Axe { get; set; } // Ou equippedSword, etc.
     }
 
+    public interface ISword<T> where T : Weapon
+    {
+        T equippedSword { get; set; } // Ou equippedSword, etc.
+    }
+
+    public interface IShield<T> where T : Weapon
+    {
+        T equippedShield { get; set; } // Ou equippedSword, etc.
+    }
+
+    // Interface de discernimento para chefes
     public interface IDiscernment
     {
         void Wraiths();

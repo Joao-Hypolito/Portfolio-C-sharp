@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Batalha_Primeira_Era.Core;
 
 namespace Batalha_Primeira_Era.Items.Weapons
 {

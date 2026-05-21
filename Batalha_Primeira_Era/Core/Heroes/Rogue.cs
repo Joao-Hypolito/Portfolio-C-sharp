@@ -5,10 +5,13 @@ using System.Text;
 
 namespace Batalha_Primeira_Era.Core.Heroes
 {
-    public class Rogue : Character, IAgile
+    public class Rogue : Character, IAgile, IDagger<Dagger>
     {
-        public Rogue(string name, float life, int insight,float defense, int strength, int dexterity, int knowlegde, Weapon wielder) : base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
+        public Dagger equippedDagger { get; set; }
+        public Rogue(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Dagger wielder) :
+        base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
         {
+            equippedDagger = wielder;
         }
 
         public void Dodge() => Console.WriteLine($"{Name} vanished into the shadows and dodged!");

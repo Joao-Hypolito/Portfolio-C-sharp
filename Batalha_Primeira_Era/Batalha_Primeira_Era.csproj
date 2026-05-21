@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\Enemies\" />
+    <Compile Remove="Core\Enemies\**" />
+    <EmbeddedResource Remove="Core\Enemies\**" />
+    <None Remove="Core\Enemies\**" />
   </ItemGroup>
 
 </Project>
