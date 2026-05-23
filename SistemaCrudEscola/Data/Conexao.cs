@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 
-namespace SistemaCrudEscola.Data
+namespace EscolaBD.Data
 {
     public class Conexao
     {
-        public static string _conn =
-            @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;";
+        private static string _conn =
+            @"Data Source=(localdb)\MSSQLLocalDB;
+            Initial Catalog=ESCOLA_BD;
+            Integrated Security=True;";
 
         public static SqlConnection Abrir()
         {
-        var con = new SqlConnection( _conn );
-        con.Open();
-        return con;
+            var con = new SqlConnection(_conn);
+            con.Open();
+            return con;
         }
     }
 }
