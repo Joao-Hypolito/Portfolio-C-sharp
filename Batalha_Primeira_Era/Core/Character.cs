@@ -1,4 +1,5 @@
-﻿using Batalha_Primeira_Era.Items.Weapons;
+﻿using Batalha_Primeira_Era.Items.Inventory;
+using Batalha_Primeira_Era.Items.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -163,6 +164,7 @@ namespace Batalha_Primeira_Era.Core
 
                         //Depois do Feedback do sistema (A interface), ele chama o "ReceiveDamage" do alvo, passando o valor calculado anteriormente.
                         Console.WriteLine($"\n{Name} attacks {target.Name} with {EquippedWeapon.Name}!");
+                        Console.WriteLine($"Duarability weapon after attack: {EquippedWeapon.Durability}");
                         Console.WriteLine($"Part of the body affected: {randomPart}");
                         target.ReceiveDamage(rawDamage, randomPart);
                     }

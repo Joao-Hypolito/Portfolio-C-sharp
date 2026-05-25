@@ -47,7 +47,6 @@ namespace Batalha_Primeira_Era.Items.Weapons
             {
                 Durability -= 0.25f;
                 if (Durability < 0) Durability = 0;
-                Console.WriteLine($"{Durability}");
             }
         }
         /// <summary>
