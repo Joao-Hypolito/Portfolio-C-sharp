@@ -29,23 +29,34 @@
         private void InitializeComponent()
         {
         button1 = new Button();
-        button2 = new Button();
-        button3 = new Button();
-        button4 = new Button();
-        button5 = new Button();
+        btnSalvar = new Button();
+        btnEditar = new Button();
+        btnExcluir = new Button();
         label1 = new Label();
         label2 = new Label();
         label3 = new Label();
         label4 = new Label();
         label5 = new Label();
         label6 = new Label();
-        textBox1 = new TextBox();
-        textBox2 = new TextBox();
-        textBox3 = new TextBox();
-        checkBox1 = new CheckBox();
-        dataGridView1 = new DataGridView();
-        maskedTextBox1 = new MaskedTextBox();
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+        txtTitulo = new TextBox();
+        txtAutor = new TextBox();
+        txtCategoria = new TextBox();
+        chkAtivo = new CheckBox();
+        dgvLivros = new DataGridView();
+        txtISBN = new MaskedTextBox();
+        nudQuantidade = new NumericUpDown();
+        txtBusca = new TextBox();
+        statusStrip1 = new StatusStrip();
+        btnLimpar = new Button();
+        txtId = new TextBox();
+        Titulo = new DataGridViewTextBoxColumn();
+        Id = new DataGridViewTextBoxColumn();
+        Autor = new DataGridViewTextBoxColumn();
+        Categoria = new DataGridViewTextBoxColumn();
+        Quantidade = new DataGridViewTextBoxColumn();
+        Ativo = new DataGridViewCheckBoxColumn();
+        ((System.ComponentModel.ISupportInitialize)dgvLivros).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)nudQuantidade).BeginInit();
         SuspendLayout();
         // 
         // button1
@@ -53,66 +64,58 @@
         button1.BackColor = SystemColors.HotTrack;
         button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
         button1.ForeColor = SystemColors.ButtonFace;
-        button1.Location = new Point(93, 70);
+        button1.Location = new Point(87, 51);
         button1.Name = "button1";
         button1.Size = new Size(171, 60);
         button1.TabIndex = 0;
         button1.Text = "Novo";
         button1.UseVisualStyleBackColor = false;
+        button1.Click += btnNovo_Click;
         // 
-        // button2
+        // btnSalvar
         // 
-        button2.BackColor = Color.LimeGreen;
-        button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        button2.ForeColor = SystemColors.ButtonFace;
-        button2.Location = new Point(281, 70);
-        button2.Name = "button2";
-        button2.Size = new Size(171, 60);
-        button2.TabIndex = 1;
-        button2.Text = "Salvar";
-        button2.UseVisualStyleBackColor = false;
+        btnSalvar.BackColor = Color.LimeGreen;
+        btnSalvar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnSalvar.ForeColor = SystemColors.ButtonFace;
+        btnSalvar.Location = new Point(275, 51);
+        btnSalvar.Name = "btnSalvar";
+        btnSalvar.Size = new Size(171, 60);
+        btnSalvar.TabIndex = 1;
+        btnSalvar.Text = "Salvar";
+        btnSalvar.UseVisualStyleBackColor = false;
+        btnSalvar.Click += btnSalvar_Click;
         // 
-        // button3
+        // btnEditar
         // 
-        button3.BackColor = Color.DarkOrange;
-        button3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        button3.ForeColor = SystemColors.ControlLight;
-        button3.Location = new Point(471, 70);
-        button3.Name = "button3";
-        button3.Size = new Size(171, 60);
-        button3.TabIndex = 2;
-        button3.Text = "Editar";
-        button3.UseVisualStyleBackColor = false;
+        btnEditar.BackColor = Color.DarkOrange;
+        btnEditar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnEditar.ForeColor = SystemColors.ControlLight;
+        btnEditar.Location = new Point(465, 51);
+        btnEditar.Name = "btnEditar";
+        btnEditar.Size = new Size(171, 60);
+        btnEditar.TabIndex = 2;
+        btnEditar.Text = "Editar";
+        btnEditar.UseVisualStyleBackColor = false;
+        btnEditar.Click += btnEditar_Click;
         // 
-        // button4
+        // btnExcluir
         // 
-        button4.BackColor = Color.Red;
-        button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        button4.ForeColor = SystemColors.ControlLight;
-        button4.Location = new Point(660, 70);
-        button4.Name = "button4";
-        button4.Size = new Size(171, 60);
-        button4.TabIndex = 3;
-        button4.Text = "Excluir";
-        button4.UseVisualStyleBackColor = false;
-        // 
-        // button5
-        // 
-        button5.BackColor = SystemColors.AppWorkspace;
-        button5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        button5.ForeColor = SystemColors.ControlLight;
-        button5.Location = new Point(849, 70);
-        button5.Name = "button5";
-        button5.Size = new Size(171, 60);
-        button5.TabIndex = 4;
-        button5.Text = "Limpar";
-        button5.UseVisualStyleBackColor = false;
+        btnExcluir.BackColor = Color.Red;
+        btnExcluir.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnExcluir.ForeColor = SystemColors.ControlLight;
+        btnExcluir.Location = new Point(654, 51);
+        btnExcluir.Name = "btnExcluir";
+        btnExcluir.Size = new Size(171, 60);
+        btnExcluir.TabIndex = 3;
+        btnExcluir.Text = "Excluir";
+        btnExcluir.UseVisualStyleBackColor = false;
+        btnExcluir.Click += btnExcluir_Click;
         // 
         // label1
         // 
         label1.AutoSize = true;
         label1.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        label1.Location = new Point(93, 21);
+        label1.Location = new Point(87, 2);
         label1.Name = "label1";
         label1.Size = new Size(200, 31);
         label1.TabIndex = 5;
@@ -122,7 +125,7 @@
         // 
         label2.AutoSize = true;
         label2.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        label2.Location = new Point(93, 157);
+        label2.Location = new Point(87, 138);
         label2.Name = "label2";
         label2.Size = new Size(183, 31);
         label2.TabIndex = 6;
@@ -132,7 +135,7 @@
         // 
         label3.AutoSize = true;
         label3.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        label3.Location = new Point(93, 211);
+        label3.Location = new Point(93, 182);
         label3.Name = "label3";
         label3.Size = new Size(56, 21);
         label3.TabIndex = 7;
@@ -142,7 +145,7 @@
         // 
         label4.AutoSize = true;
         label4.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        label4.Location = new Point(93, 270);
+        label4.Location = new Point(93, 241);
         label4.Name = "label4";
         label4.Size = new Size(53, 21);
         label4.TabIndex = 8;
@@ -152,7 +155,7 @@
         // 
         label5.AutoSize = true;
         label5.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        label5.Location = new Point(93, 320);
+        label5.Location = new Point(93, 291);
         label5.Name = "label5";
         label5.Size = new Size(81, 21);
         label5.TabIndex = 9;
@@ -162,83 +165,185 @@
         // 
         label6.AutoSize = true;
         label6.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        label6.Location = new Point(351, 270);
+        label6.Location = new Point(351, 241);
         label6.Name = "label6";
-        label6.Size = new Size(53, 21);
+        label6.Size = new Size(52, 21);
         label6.TabIndex = 10;
-        label6.Text = "ISRN";
+        label6.Text = "ISBN";
         // 
-        // textBox1
+        // txtTitulo
         // 
-        textBox1.Location = new Point(93, 244);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new Size(237, 23);
-        textBox1.TabIndex = 11;
+        txtTitulo.Location = new Point(93, 215);
+        txtTitulo.Name = "txtTitulo";
+        txtTitulo.Size = new Size(237, 23);
+        txtTitulo.TabIndex = 11;
         // 
-        // textBox2
+        // txtAutor
         // 
-        textBox2.Location = new Point(93, 294);
-        textBox2.Name = "textBox2";
-        textBox2.Size = new Size(237, 23);
-        textBox2.TabIndex = 12;
+        txtAutor.Location = new Point(93, 265);
+        txtAutor.Name = "txtAutor";
+        txtAutor.Size = new Size(237, 23);
+        txtAutor.TabIndex = 12;
         // 
-        // textBox3
+        // txtCategoria
         // 
-        textBox3.Location = new Point(93, 344);
-        textBox3.Name = "textBox3";
-        textBox3.Size = new Size(237, 23);
-        textBox3.TabIndex = 13;
+        txtCategoria.Location = new Point(93, 315);
+        txtCategoria.Name = "txtCategoria";
+        txtCategoria.Size = new Size(237, 23);
+        txtCategoria.TabIndex = 13;
         // 
-        // checkBox1
+        // chkAtivo
         // 
-        checkBox1.AutoSize = true;
-        checkBox1.Location = new Point(341, 348);
-        checkBox1.Name = "checkBox1";
-        checkBox1.Size = new Size(111, 19);
-        checkBox1.TabIndex = 14;
-        checkBox1.Text = "Ativo no Acervo";
-        checkBox1.UseVisualStyleBackColor = true;
+        chkAtivo.AutoSize = true;
+        chkAtivo.Checked = true;
+        chkAtivo.CheckState = CheckState.Checked;
+        chkAtivo.Location = new Point(502, 319);
+        chkAtivo.Name = "chkAtivo";
+        chkAtivo.Size = new Size(111, 19);
+        chkAtivo.TabIndex = 5;
+        chkAtivo.Text = "Ativo no Acervo";
+        chkAtivo.UseVisualStyleBackColor = true;
         // 
-        // dataGridView1
+        // dgvLivros
         // 
-        dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dataGridView1.Location = new Point(93, 392);
-        dataGridView1.Name = "dataGridView1";
-        dataGridView1.Size = new Size(1272, 150);
-        dataGridView1.TabIndex = 15;
+        dgvLivros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvLivros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvLivros.Columns.AddRange(new DataGridViewColumn[] { Titulo, Id, Autor, Categoria, Quantidade, Ativo });
+        dgvLivros.Location = new Point(93, 373);
+        dgvLivros.MultiSelect = false;
+        dgvLivros.Name = "dgvLivros";
+        dgvLivros.ReadOnly = true;
+        dgvLivros.Size = new Size(1272, 150);
+        dgvLivros.TabIndex = 15;
+        dgvLivros.CellClick += dgvLivros_CellClick;
         // 
-        // maskedTextBox1
+        // txtISBN
         // 
-        maskedTextBox1.Location = new Point(351, 294);
-        maskedTextBox1.Name = "maskedTextBox1";
-        maskedTextBox1.Size = new Size(187, 23);
-        maskedTextBox1.TabIndex = 16;
+        txtISBN.Location = new Point(351, 265);
+        txtISBN.Name = "txtISBN";
+        txtISBN.Size = new Size(187, 23);
+        txtISBN.TabIndex = 16;
+        // 
+        // nudQuantidade
+        // 
+        nudQuantidade.Location = new Point(351, 315);
+        nudQuantidade.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+        nudQuantidade.Name = "nudQuantidade";
+        nudQuantidade.Size = new Size(120, 23);
+        nudQuantidade.TabIndex = 4;
+        nudQuantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
+        // 
+        // txtBusca
+        // 
+        txtBusca.Location = new Point(93, 344);
+        txtBusca.Name = "txtBusca";
+        txtBusca.PlaceholderText = "Buscar livro...'";
+        txtBusca.Size = new Size(177, 23);
+        txtBusca.TabIndex = 17;
+        // 
+        // statusStrip1
+        // 
+        statusStrip1.Location = new Point(0, 532);
+        statusStrip1.Name = "statusStrip1";
+        statusStrip1.Size = new Size(1445, 22);
+        statusStrip1.TabIndex = 18;
+        statusStrip1.Text = "statusStrip1";
+        // 
+        // btnLimpar
+        // 
+        btnLimpar.BackColor = Color.DimGray;
+        btnLimpar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnLimpar.ForeColor = SystemColors.ControlLight;
+        btnLimpar.Location = new Point(853, 51);
+        btnLimpar.Name = "btnLimpar";
+        btnLimpar.Size = new Size(171, 60);
+        btnLimpar.TabIndex = 19;
+        btnLimpar.Text = "Limpar";
+        btnLimpar.UseVisualStyleBackColor = false;
+        btnLimpar.Click += btnLimpar_Click;
+        // 
+        // txtId
+        // 
+        txtId.Location = new Point(571, 265);
+        txtId.Name = "txtId";
+        txtId.Size = new Size(100, 23);
+        txtId.TabIndex = 20;
+        txtId.Visible = false;
+        // 
+        // Titulo
+        // 
+        Titulo.DataPropertyName = "Titulo";
+        Titulo.HeaderText = "Título";
+        Titulo.Name = "Titulo";
+        Titulo.ReadOnly = true;
+        // 
+        // Id
+        // 
+        Id.DataPropertyName = "Id";
+        Id.HeaderText = "ID";
+        Id.Name = "Id";
+        Id.ReadOnly = true;
+        Id.Visible = false;
+        // 
+        // Autor
+        // 
+        Autor.DataPropertyName = "Autor";
+        Autor.HeaderText = "Autor";
+        Autor.Name = "Autor";
+        Autor.ReadOnly = true;
+        // 
+        // Categoria
+        // 
+        Categoria.DataPropertyName = "Categoria";
+        Categoria.HeaderText = "Categoria";
+        Categoria.Name = "Categoria";
+        Categoria.ReadOnly = true;
+        // 
+        // Quantidade
+        // 
+        Quantidade.DataPropertyName = "Quantidade";
+        Quantidade.HeaderText = "Quantidade";
+        Quantidade.Name = "Quantidade";
+        Quantidade.ReadOnly = true;
+        // 
+        // Ativo
+        // 
+        Ativo.DataPropertyName = "Ativo";
+        Ativo.HeaderText = "Ativo";
+        Ativo.Name = "Ativo";
+        Ativo.ReadOnly = true;
+        Ativo.Visible = false;
         // 
         // frmLivros
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1445, 554);
-        Controls.Add(maskedTextBox1);
-        Controls.Add(dataGridView1);
-        Controls.Add(checkBox1);
-        Controls.Add(textBox3);
-        Controls.Add(textBox2);
-        Controls.Add(textBox1);
+        Controls.Add(txtId);
+        Controls.Add(btnLimpar);
+        Controls.Add(statusStrip1);
+        Controls.Add(txtBusca);
+        Controls.Add(nudQuantidade);
+        Controls.Add(txtISBN);
+        Controls.Add(dgvLivros);
+        Controls.Add(chkAtivo);
+        Controls.Add(txtCategoria);
+        Controls.Add(txtAutor);
+        Controls.Add(txtTitulo);
         Controls.Add(label6);
         Controls.Add(label5);
         Controls.Add(label4);
         Controls.Add(label3);
         Controls.Add(label2);
         Controls.Add(label1);
-        Controls.Add(button5);
-        Controls.Add(button4);
-        Controls.Add(button3);
-        Controls.Add(button2);
+        Controls.Add(btnExcluir);
+        Controls.Add(btnEditar);
+        Controls.Add(btnSalvar);
         Controls.Add(button1);
         Name = "frmLivros";
         Text = "forms";
-        ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)dgvLivros).EndInit();
+        ((System.ComponentModel.ISupportInitialize)nudQuantidade).EndInit();
         ResumeLayout(false);
         PerformLayout();
         }
@@ -246,21 +351,31 @@
         #endregion
 
         private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button btnSalvar;
+        private Button btnEditar;
+        private Button btnExcluir;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private CheckBox checkBox1;
-        private DataGridView dataGridView1;
-        private MaskedTextBox maskedTextBox1;
+        private TextBox txtTitulo;
+        private TextBox txtAutor;
+        private TextBox txtCategoria;
+        private CheckBox chkAtivo;
+        private DataGridView dgvLivros;
+        private MaskedTextBox txtISBN;
+        private NumericUpDown nudQuantidade;
+        private TextBox txtBusca;
+        private StatusStrip statusStrip1;
+        private Button btnLimpar;
+        private TextBox txtId;
+        private DataGridViewTextBoxColumn Titulo;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Autor;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn Quantidade;
+        private DataGridViewCheckBoxColumn Ativo;
     }
 }
