@@ -29,7 +29,7 @@ namespace Sistema_Biblioteca_Crud
         {
         dgvLivros.DataSource = _livroController.Listar();
 
-        // Oculta a coluna ID para ficar invisível para o usuário, mas o sistema continua sabendo que ela existe
+        
         if (dgvLivros.Columns["Id"] != null)
         {
         dgvLivros.Columns["Id"].Visible = false;
@@ -44,7 +44,7 @@ namespace Sistema_Biblioteca_Crud
             Autor = txtAutor.Text,
             ISBN = string.IsNullOrWhiteSpace(txtISBN.Text) ? null : txtISBN.Text,
             Categoria = txtCategoria.Text,
-            Quantidade = (int)nudQuantidade.Value, // Assumindo o uso de um NumericUpDown para a quantidade
+            Quantidade = (int)nudQuantidade.Value, 
             Ativo = chkAtivo.Checked
         });
 
@@ -95,7 +95,7 @@ namespace Sistema_Biblioteca_Crud
         txtISBN.Clear();
         txtCategoria.Clear();
         nudQuantidade.Value = 0;
-        chkAtivo.Checked = true; // Marca como ativo por padrão
+        chkAtivo.Checked = true; 
         }
 
         private void dgvLivros_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -7,7 +7,7 @@ namespace Sistema_Biblioteca_Crud.Data
 {
     public class Conexao
     {
-        private static string _conn =
+        private static string _conn =  
             @"Data Source=(localdb)\MSSQLLocalDB;
             Initial Catalog=BibliotecaDB;
             Integrated Security=True;";

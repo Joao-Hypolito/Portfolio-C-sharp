@@ -19,5 +19,8 @@ public class Emprestimos
         public DateTime DataDevolucao { get; set; }
 
         public bool Devolvido { get; set; } = false;
+
+        public string NomeLeitor { get; set; } = string.Empty;
+        public string TituloLivro { get; set; } = string.Empty;
     }
 }

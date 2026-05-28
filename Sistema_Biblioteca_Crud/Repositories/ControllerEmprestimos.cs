@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Data.SqlClient;
 using Sistema_Biblioteca_Crud.Data;
 using Sistema_Biblioteca_Crud.Models;
 
 namespace Sistema_Biblioteca_Crud.Repositories
 {
-public class ControllerEmprestimo
+    public class ControllerEmprestimo
     {
-        // CREATE
+        
         public void Inserir(Emprestimos e)
         {
             using var con = Conexao.Abrir();
+            
+            
             var cmd = new SqlCommand(
                 @"INSERT INTO Emprestimos (LeitorId, LivroId, DataEmprestimo, DataDevolucao, Devolvido)
                   VALUES (@leitor, @livro, @dataEmp, @dataDev, @dev)", con);
@@ -24,17 +23,29 @@ public class ControllerEmprestimo
             cmd.Parameters.AddWithValue("@dataEmp", e.DataEmprestimo);
             cmd.Parameters.AddWithValue("@dataDev", e.DataDevolucao);
             cmd.Parameters.AddWithValue("@dev", e.Devolvido);
-
             cmd.ExecuteNonQuery();
+
+            
+            var cmdEstoque = new SqlCommand(
+                "UPDATE Livros SET Quantidade = Quantidade - 1 WHERE Id = @livro", con);
+            cmdEstoque.Parameters.AddWithValue("@livro", e.LivroId);
+            cmdEstoque.ExecuteNonQuery();
         }
 
-        // READ
+        
         public List<Emprestimos> Listar()
         {
             var lista = new List<Emprestimos>();
             using var con = Conexao.Abrir();
-            // Ordenado pela data de empréstimo mais recente
-            var cmd = new SqlCommand("SELECT * FROM Emprestimos ORDER BY DataEmprestimo DESC", con);
+            
+            
+            var cmd = new SqlCommand(
+                @"SELECT emp.*, lei.Nome AS NomeLeitor, liv.Titulo AS TituloLivro 
+                  FROM Emprestimos emp
+                  INNER JOIN Leitores lei ON emp.LeitorId = lei.Id
+                  INNER JOIN Livros liv ON emp.LivroId = liv.Id
+                  ORDER BY emp.DataEmprestimo DESC", con);
+                  
             using var dr = cmd.ExecuteReader();
 
             while (dr.Read())
@@ -46,14 +57,18 @@ public class ControllerEmprestimo
                     LivroId = (int)dr["LivroId"],
                     DataEmprestimo = (DateTime)dr["DataEmprestimo"],
                     DataDevolucao = (DateTime)dr["DataDevolucao"],
-                    Devolvido = (bool)dr["Devolvido"]
+                    Devolvido = (bool)dr["Devolvido"],
+                    
+                    
+                    NomeLeitor = dr["NomeLeitor"].ToString()!,
+                    TituloLivro = dr["TituloLivro"].ToString()!
                 });
             }
             return lista;
         }
 
-        // UPDATE
-        public void Ultualizar(Emprestimos e)
+        
+        public void Atualizar(Emprestimos e)
         {
             using var con = Conexao.Abrir();
             var cmd = new SqlCommand(
@@ -70,13 +85,31 @@ public class ControllerEmprestimo
             cmd.ExecuteNonQuery();
         }
 
-        // DELETE
+        
+        public void Devolver(int id)
+        {
+            using var con = Conexao.Abrir();
+
+            
+            var cmd = new SqlCommand(
+                "UPDATE Emprestimos SET Devolvido = 1 WHERE Id = @id", con);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+
+            
+            var cmdEstoque = new SqlCommand(
+                @"UPDATE Livros SET Quantidade = Quantidade + 1 
+                  WHERE Id = (SELECT LivroId FROM Emprestimos WHERE Id = @id)", con);
+            cmdEstoque.Parameters.AddWithValue("@id", id);
+            cmdEstoque.ExecuteNonQuery();
+        }
+
+        
         public void Excluir(int id)
         {
             using var con = Conexao.Abrir();
             var cmd = new SqlCommand(
-                @"DELETE FROM Emprestimos
-                  WHERE Id=@id", con);
+                @"DELETE FROM Emprestimos WHERE Id=@id", con);
 
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();

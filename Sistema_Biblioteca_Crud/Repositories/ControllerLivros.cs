@@ -21,7 +21,6 @@ public class ControllerLivros
             
             cmd.Parameters.AddWithValue("@t", l.Titulo);
             cmd.Parameters.AddWithValue("@a", l.Autor);      
-            // Tratamento caso o ISBN seja enviado nulo
             cmd.Parameters.AddWithValue("@i", l.ISBN ?? (object)DBNull.Value);   
             cmd.Parameters.AddWithValue("@c", l.Categoria);
             cmd.Parameters.AddWithValue("@q", l.Quantidade);
@@ -45,8 +44,6 @@ public class ControllerLivros
                     Id = (int)dr["Id"],
                     Titulo = dr["Titulo"].ToString()!,
                     Autor = dr["Autor"].ToString()!,
-                    
-                    // Tratamento para ler o ISBN caso ele esteja nulo no banco
                     ISBN = dr["ISBN"] == DBNull.Value ? null : dr["ISBN"].ToString(),
                     Categoria = dr["Categoria"].ToString()!,
                     Quantidade = (int)dr["Quantidade"],
@@ -66,8 +63,6 @@ public class ControllerLivros
             
             cmd.Parameters.AddWithValue("@t", l.Titulo);
             cmd.Parameters.AddWithValue("@a", l.Autor);
-            
-            // Tratamento caso o ISBN seja atualizado para nulo
             cmd.Parameters.AddWithValue("@i", l.ISBN ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@c", l.Categoria);
             cmd.Parameters.AddWithValue("@q", l.Quantidade);

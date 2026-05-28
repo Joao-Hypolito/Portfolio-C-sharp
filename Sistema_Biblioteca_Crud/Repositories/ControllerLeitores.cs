@@ -22,7 +22,7 @@ public class ControllerLeitores
             cmd.Parameters.AddWithValue("@n", l.Nome);
             cmd.Parameters.AddWithValue("@e", l.Email);
             
-            // Tratamento para campos opcionais (permitem nulo)
+            
             cmd.Parameters.AddWithValue("@tel", l.Telefone ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@tur", l.Turma ?? (object)DBNull.Value);
             
@@ -47,7 +47,7 @@ public class ControllerLeitores
                     Nome = dr["Nome"].ToString()!,
                     Email = dr["Email"].ToString()!,
                     
-                    // Verificação caso o valor esteja nulo na tabela
+                    
                     Telefone = dr["Telefone"] == DBNull.Value ? null : dr["Telefone"].ToString(),
                     Turma = dr["Turma"] == DBNull.Value ? null : dr["Turma"].ToString(),
                     
@@ -68,7 +68,7 @@ public class ControllerLeitores
             cmd.Parameters.AddWithValue("@n", l.Nome);
             cmd.Parameters.AddWithValue("@e", l.Email);
             
-            // Tratamento caso os campos opcionais sejam alterados para nulo
+            
             cmd.Parameters.AddWithValue("@tel", l.Telefone ?? (object)DBNull.Value);
             cmd.Parameters.AddWithValue("@tur", l.Turma ?? (object)DBNull.Value);
             
