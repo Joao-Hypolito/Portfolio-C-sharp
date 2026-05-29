@@ -29,6 +29,31 @@ public class ControllerLivros
             cmd.ExecuteNonQuery();
         }
 
+        // READ - FILTRAR POR UM LIVRO ESPECÍFICO
+        public List<Livros> ListarPorLivro(int id)
+        {
+            var lista = new List<Livros>();
+            using var con = Conexao.Abrir();
+            var cmd = new SqlCommand("SELECT * FROM Livros WHERE Id = @id", con);
+            cmd.Parameters.AddWithValue("@id", id);
+            using var dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lista.Add(new Livros
+                {
+                    Id = (int)dr["Id"],
+                    Titulo = dr["Titulo"].ToString()!,
+                    Autor = dr["Autor"].ToString()!,
+                    ISBN = dr["ISBN"] == DBNull.Value ? null : dr["ISBN"].ToString(),
+                    Categoria = dr["Categoria"].ToString()!,
+                    Quantidade = (int)dr["Quantidade"],
+                    Ativo = (bool)dr["Ativo"]
+                });
+            }
+            return lista;
+        }
+
         // READ
         public List<Livros> Listar()
         {

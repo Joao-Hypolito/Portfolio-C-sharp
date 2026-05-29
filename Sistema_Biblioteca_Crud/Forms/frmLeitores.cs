@@ -129,21 +129,35 @@ namespace Sistema_Biblioteca_Crud
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtId.Text))
-            {
-                MessageBox.Show("Selecione um leitor na tabela primeiro para excluir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (string.IsNullOrEmpty(txtId.Text)) 
+                {
+                    MessageBox.Show("Selecione um leitor na tabela para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            var ok = MessageBox.Show("Deseja excluir este leitor do sistema?", "Confirmar Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var confirmacao = MessageBox.Show("Deseja realmente excluir este leitor?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (ok == DialogResult.Yes)
-            {
-                _leitorController.Excluir(int.Parse(txtId.Text));
-                CarregarGrid();
-                Limpar();
-                MessageBox.Show("Leitor excluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+                if (confirmacao == DialogResult.Yes)
+                {
+                    try
+                    {
+                        
+                        int idLeitor = int.Parse(txtId.Text);
+            
+                        
+                        _leitorController.Excluir(idLeitor); 
+
+                        CarregarGrid();
+                        Limpar();
+                        MessageBox.Show("Leitor excluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+                        
+                        MessageBox.Show("Não é possível excluir este leitor pois ele possui histórico de empréstimos vinculado!", 
+                                        "Erro ao Excluir", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
         }
 }
 }

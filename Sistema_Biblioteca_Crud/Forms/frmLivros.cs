@@ -29,7 +29,7 @@ namespace Sistema_Biblioteca_Crud
         {
         dgvLivros.DataSource = _livroController.Listar();
 
-        
+
         if (dgvLivros.Columns["Id"] != null)
         {
         dgvLivros.Columns["Id"].Visible = false;
@@ -44,7 +44,7 @@ namespace Sistema_Biblioteca_Crud
             Autor = txtAutor.Text,
             ISBN = string.IsNullOrWhiteSpace(txtISBN.Text) ? null : txtISBN.Text,
             Categoria = txtCategoria.Text,
-            Quantidade = (int)nudQuantidade.Value, 
+            Quantidade = (int)nudQuantidade.Value,
             Ativo = chkAtivo.Checked
         });
 
@@ -95,7 +95,12 @@ namespace Sistema_Biblioteca_Crud
         txtISBN.Clear();
         txtCategoria.Clear();
         nudQuantidade.Value = 0;
-        chkAtivo.Checked = true; 
+        chkAtivo.Checked = true;
+        if (cboFiltroLivro.Items.Count > 0) 
+        {
+        cboFiltroLivro.SelectedIndex = -1;
+        }
+        CarregarGrid();
         }
 
         private void dgvLivros_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -112,21 +117,56 @@ namespace Sistema_Biblioteca_Crud
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-        
-            if (string.IsNullOrEmpty(txtId.Text))
-            {
-                MessageBox.Show("Selecione um livro na tabela primeiro para excluir!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            var ok = MessageBox.Show("Deseja excluir este livro do acervo?", "Confirmar Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ok == DialogResult.Yes)
-            {
-                _livroController.Excluir(int.Parse(txtId.Text));
-                CarregarGrid();
-                Limpar();
+        if (string.IsNullOrEmpty(txtId.Text))
+        {
+        MessageBox.Show("Selecione um leitor na tabela para excluir.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
         }
+
+        var confirmacao = MessageBox.Show("Deseja realmente excluir este leitor?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+        if (confirmacao == DialogResult.Yes)
+        {
+        try
+        {
+        
+        int idLeitor = int.Parse(txtId.Text);
+
+        
+        _livroController.Excluir(idLeitor);
+
+        CarregarGrid();
+        Limpar();
+        MessageBox.Show("Leitor excluído com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception)
+        {
+        
+        MessageBox.Show("Não é possível excluir este leitor pois ele possui histórico de empréstimos vinculado!",
+                        "Erro ao Excluir", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        }
+        }
+
+        private void cboFiltroLivro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        if (cboFiltroLivro.SelectedValue != null && cboFiltroLivro.Focused)
+        {
+        int idLeitor = (int)cboFiltroLivro.SelectedValue;
+
+        
+        dgvLivros.DataSource = _livroController.ListarPorLivro(idLeitor);
+        }
+        }
+
+        private void dgvLivros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmLivros_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,24 +36,23 @@
         label8 = new Label();
         label2 = new Label();
         dgvEmprestimos = new DataGridView();
-        statusStrip1 = new StatusStrip();
-        dtpEmprestimo = new DateTimePicker();
-        dtpDevolucao = new DateTimePicker();
-        gbEmAberto = new GroupBox();
-        label3 = new Label();
-        label4 = new Label();
-        btnEmprestar = new Button();
-        btnDevolver = new Button();
-        lblFeedback = new Label();
-        txtId = new TextBox();
-        cboFiltroLeitor = new ComboBox();
-        label5 = new Label();
         Leitor = new DataGridViewTextBoxColumn();
         Livro = new DataGridViewTextBoxColumn();
         Id = new DataGridViewTextBoxColumn();
         Emprestimo = new DataGridViewTextBoxColumn();
         Devolvido = new DataGridViewTextBoxColumn();
         Status = new DataGridViewCheckBoxColumn();
+        statusStrip1 = new StatusStrip();
+        dtpEmprestimo = new DateTimePicker();
+        dtpDevolucao = new DateTimePicker();
+        gbEmAberto = new GroupBox();
+        cboFiltroLeitor = new ComboBox();
+        label5 = new Label();
+        btnDevolver = new Button();
+        btnEmprestar = new Button();
+        label3 = new Label();
+        label4 = new Label();
+        txtId = new TextBox();
         ((System.ComponentModel.ISupportInitialize)dgvEmprestimos).BeginInit();
         gbEmAberto.SuspendLayout();
         SuspendLayout();
@@ -128,6 +127,7 @@
         // 
         // dgvEmprestimos
         // 
+        dgvEmprestimos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dgvEmprestimos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvEmprestimos.Columns.AddRange(new DataGridViewColumn[] { Leitor, Livro, Id, Emprestimo, Devolvido, Status });
         dgvEmprestimos.Location = new Point(22, 379);
@@ -136,117 +136,6 @@
         dgvEmprestimos.Size = new Size(1272, 150);
         dgvEmprestimos.TabIndex = 49;
         dgvEmprestimos.CellContentClick += dgvEmprestimos_CellClick;
-        // 
-        // statusStrip1
-        // 
-        statusStrip1.Location = new Point(0, 541);
-        statusStrip1.Name = "statusStrip1";
-        statusStrip1.Size = new Size(1317, 22);
-        statusStrip1.TabIndex = 52;
-        statusStrip1.Text = "statusStrip1";
-        // 
-        // dtpEmprestimo
-        // 
-        dtpEmprestimo.Location = new Point(511, 283);
-        dtpEmprestimo.Name = "dtpEmprestimo";
-        dtpEmprestimo.Size = new Size(200, 23);
-        dtpEmprestimo.TabIndex = 57;
-        dtpEmprestimo.Value = new DateTime(2026, 5, 28, 8, 27, 55, 0);
-        // 
-        // dtpDevolucao
-        // 
-        dtpDevolucao.Location = new Point(735, 283);
-        dtpDevolucao.Name = "dtpDevolucao";
-        dtpDevolucao.Size = new Size(200, 23);
-        dtpDevolucao.TabIndex = 58;
-        dtpDevolucao.Value = new DateTime(2026, 5, 28, 8, 28, 2, 0);
-        // 
-        // gbEmAberto
-        // 
-        gbEmAberto.Controls.Add(cboFiltroLeitor);
-        gbEmAberto.Controls.Add(label5);
-        gbEmAberto.Controls.Add(btnDevolver);
-        gbEmAberto.Controls.Add(btnEmprestar);
-        gbEmAberto.Location = new Point(16, 240);
-        gbEmAberto.Name = "gbEmAberto";
-        gbEmAberto.Size = new Size(478, 126);
-        gbEmAberto.TabIndex = 59;
-        gbEmAberto.TabStop = false;
-        gbEmAberto.Text = "■ Empréstimos em Aberto";
-        // 
-        // label3
-        // 
-        label3.AutoSize = true;
-        label3.Location = new Point(511, 250);
-        label3.Name = "label3";
-        label3.Size = new Size(98, 15);
-        label3.TabIndex = 60;
-        label3.Text = "Data Empréstimo";
-        // 
-        // label4
-        // 
-        label4.AutoSize = true;
-        label4.Location = new Point(735, 250);
-        label4.Name = "label4";
-        label4.Size = new Size(90, 15);
-        label4.TabIndex = 61;
-        label4.Text = "Data Devolução";
-        // 
-        // btnEmprestar
-        // 
-        btnEmprestar.Location = new Point(6, 25);
-        btnEmprestar.Name = "btnEmprestar";
-        btnEmprestar.Size = new Size(172, 23);
-        btnEmprestar.TabIndex = 62;
-        btnEmprestar.Text = "■ Registrar Empréstimo\r\n";
-        btnEmprestar.UseVisualStyleBackColor = true;
-        btnEmprestar.Click += btnEmprestar_Click;
-        // 
-        // btnDevolver
-        // 
-        btnDevolver.Location = new Point(196, 25);
-        btnDevolver.Name = "btnDevolver";
-        btnDevolver.Size = new Size(155, 23);
-        btnDevolver.TabIndex = 63;
-        btnDevolver.Text = "■ Registrar Devolucao\r\n";
-        btnDevolver.UseVisualStyleBackColor = true;
-        btnDevolver.Click += btnDevolver_Click;
-        // 
-        // lblFeedback
-        // 
-        lblFeedback.Location = new Point(1180, 328);
-        lblFeedback.Name = "lblFeedback";
-        lblFeedback.Size = new Size(100, 23);
-        lblFeedback.TabIndex = 65;
-        lblFeedback.Text = "label6";
-        lblFeedback.Visible = false;
-        // 
-        // txtId
-        // 
-        txtId.Location = new Point(676, 325);
-        txtId.Name = "txtId";
-        txtId.Size = new Size(100, 23);
-        txtId.TabIndex = 66;
-        txtId.Visible = false;
-        // 
-        // cboFiltroLeitor
-        // 
-        cboFiltroLeitor.FormattingEnabled = true;
-        cboFiltroLeitor.Location = new Point(128, 65);
-        cboFiltroLeitor.Name = "cboFiltroLeitor";
-        cboFiltroLeitor.Size = new Size(121, 23);
-        cboFiltroLeitor.TabIndex = 67;
-        cboFiltroLeitor.Text = "Todos os leitores";
-        cboFiltroLeitor.SelectedIndexChanged += cboFiltroLeitor_SelectedIndexChanged;
-        // 
-        // label5
-        // 
-        label5.AutoSize = true;
-        label5.Location = new Point(12, 65);
-        label5.Name = "label5";
-        label5.Size = new Size(91, 15);
-        label5.TabIndex = 68;
-        label5.Text = "Filtrar por leitor:";
         // 
         // Leitor
         // 
@@ -292,13 +181,115 @@
         Status.ReadOnly = true;
         Status.Visible = false;
         // 
+        // statusStrip1
+        // 
+        statusStrip1.Location = new Point(0, 541);
+        statusStrip1.Name = "statusStrip1";
+        statusStrip1.Size = new Size(1317, 22);
+        statusStrip1.TabIndex = 52;
+        statusStrip1.Text = "statusStrip1";
+        // 
+        // dtpEmprestimo
+        // 
+        dtpEmprestimo.Location = new Point(511, 283);
+        dtpEmprestimo.Name = "dtpEmprestimo";
+        dtpEmprestimo.Size = new Size(200, 23);
+        dtpEmprestimo.TabIndex = 57;
+        dtpEmprestimo.Value = new DateTime(2026, 5, 28, 8, 27, 55, 0);
+        // 
+        // dtpDevolucao
+        // 
+        dtpDevolucao.Location = new Point(735, 283);
+        dtpDevolucao.Name = "dtpDevolucao";
+        dtpDevolucao.Size = new Size(200, 23);
+        dtpDevolucao.TabIndex = 58;
+        dtpDevolucao.Value = new DateTime(2026, 5, 28, 8, 28, 2, 0);
+        // 
+        // gbEmAberto
+        // 
+        gbEmAberto.Controls.Add(cboFiltroLeitor);
+        gbEmAberto.Controls.Add(label5);
+        gbEmAberto.Controls.Add(btnDevolver);
+        gbEmAberto.Controls.Add(btnEmprestar);
+        gbEmAberto.Location = new Point(16, 240);
+        gbEmAberto.Name = "gbEmAberto";
+        gbEmAberto.Size = new Size(478, 126);
+        gbEmAberto.TabIndex = 59;
+        gbEmAberto.TabStop = false;
+        gbEmAberto.Text = "■ Empréstimos em Aberto";
+        // 
+        // cboFiltroLeitor
+        // 
+        cboFiltroLeitor.FormattingEnabled = true;
+        cboFiltroLeitor.Location = new Point(128, 65);
+        cboFiltroLeitor.Name = "cboFiltroLeitor";
+        cboFiltroLeitor.Size = new Size(121, 23);
+        cboFiltroLeitor.TabIndex = 67;
+        cboFiltroLeitor.Text = "Todos os leitores";
+        cboFiltroLeitor.SelectedIndexChanged += cboFiltroLeitor_SelectedIndexChanged;
+        // 
+        // label5
+        // 
+        label5.AutoSize = true;
+        label5.Location = new Point(12, 65);
+        label5.Name = "label5";
+        label5.Size = new Size(91, 15);
+        label5.TabIndex = 68;
+        label5.Text = "Filtrar por leitor:";
+        // 
+        // btnDevolver
+        // 
+        btnDevolver.Location = new Point(196, 25);
+        btnDevolver.Name = "btnDevolver";
+        btnDevolver.Size = new Size(155, 23);
+        btnDevolver.TabIndex = 63;
+        btnDevolver.Text = "■ Registrar Devolucao\r\n";
+        btnDevolver.UseVisualStyleBackColor = true;
+        btnDevolver.Click += btnDevolver_Click;
+        // 
+        // btnEmprestar
+        // 
+        btnEmprestar.Location = new Point(6, 25);
+        btnEmprestar.Name = "btnEmprestar";
+        btnEmprestar.Size = new Size(172, 23);
+        btnEmprestar.TabIndex = 62;
+        btnEmprestar.Text = "■ Registrar Empréstimo\r\n";
+        btnEmprestar.UseVisualStyleBackColor = true;
+        btnEmprestar.Click += btnEmprestar_Click;
+        // 
+        // label3
+        // 
+        label3.AutoSize = true;
+        label3.Location = new Point(511, 250);
+        label3.Name = "label3";
+        label3.Size = new Size(98, 15);
+        label3.TabIndex = 60;
+        label3.Text = "Data Empréstimo";
+        // 
+        // label4
+        // 
+        label4.AutoSize = true;
+        label4.Location = new Point(735, 250);
+        label4.Name = "label4";
+        label4.Size = new Size(90, 15);
+        label4.TabIndex = 61;
+        label4.Text = "Data Devolução";
+        // 
+        // txtId
+        // 
+        txtId.Location = new Point(676, 325);
+        txtId.Name = "txtId";
+        txtId.Size = new Size(100, 23);
+        txtId.TabIndex = 66;
+        txtId.Visible = false;
+        txtId.TextChanged += txtId_TextChanged;
+        // 
         // frmEmprestimo
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1317, 563);
         Controls.Add(txtId);
-        Controls.Add(lblFeedback);
         Controls.Add(label4);
         Controls.Add(label3);
         Controls.Add(dtpDevolucao);
@@ -340,7 +331,6 @@
         private Label label4;
         private Button btnEmprestar;
         private Button btnDevolver;
-        private Label lblFeedback;
         private TextBox txtId;
         private ComboBox cboFiltroLeitor;
         private Label label5;

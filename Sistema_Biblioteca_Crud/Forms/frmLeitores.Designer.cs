@@ -30,6 +30,12 @@
         {
         mtbTelefone = new MaskedTextBox();
         dgvLeitores = new DataGridView();
+        Nome = new DataGridViewTextBoxColumn();
+        Email = new DataGridViewTextBoxColumn();
+        Telefone = new DataGridViewTextBoxColumn();
+        Id = new DataGridViewTextBoxColumn();
+        Turma = new DataGridViewTextBoxColumn();
+        Ativo = new DataGridViewCheckBoxColumn();
         chkAtivo = new CheckBox();
         txtTurma = new TextBox();
         txtEmail = new TextBox();
@@ -46,12 +52,6 @@
         button2 = new Button();
         btnNovo = new Button();
         txtId = new TextBox();
-        Nome = new DataGridViewTextBoxColumn();
-        Email = new DataGridViewTextBoxColumn();
-        Telefone = new DataGridViewTextBoxColumn();
-        Id = new DataGridViewTextBoxColumn();
-        Turma = new DataGridViewTextBoxColumn();
-        Ativo = new DataGridViewCheckBoxColumn();
         ((System.ComponentModel.ISupportInitialize)dgvLeitores).BeginInit();
         SuspendLayout();
         // 
@@ -64,6 +64,7 @@
         // 
         // dgvLeitores
         // 
+        dgvLeitores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dgvLeitores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvLeitores.Columns.AddRange(new DataGridViewColumn[] { Nome, Email, Telefone, Id, Turma, Ativo });
         dgvLeitores.Location = new Point(79, 418);
@@ -71,6 +72,43 @@
         dgvLeitores.Size = new Size(1272, 150);
         dgvLeitores.TabIndex = 32;
         dgvLeitores.CellContentClick += dgvLeitores_CellContentClick;
+        // 
+        // Nome
+        // 
+        Nome.DataPropertyName = "Nome";
+        Nome.HeaderText = "Nome";
+        Nome.Name = "Nome";
+        // 
+        // Email
+        // 
+        Email.DataPropertyName = "Email";
+        Email.HeaderText = "E-mail";
+        Email.Name = "Email";
+        // 
+        // Telefone
+        // 
+        Telefone.DataPropertyName = "Telefone";
+        Telefone.HeaderText = "Telefone";
+        Telefone.Name = "Telefone";
+        // 
+        // Id
+        // 
+        Id.DataPropertyName = "Id";
+        Id.HeaderText = "Id";
+        Id.Name = "Id";
+        Id.Visible = false;
+        // 
+        // Turma
+        // 
+        Turma.HeaderText = "Turma";
+        Turma.Name = "Turma";
+        Turma.Visible = false;
+        // 
+        // Ativo
+        // 
+        Ativo.HeaderText = "Ativo";
+        Ativo.Name = "Ativo";
+        Ativo.Visible = false;
         // 
         // chkAtivo
         // 
@@ -236,43 +274,6 @@
         txtId.Size = new Size(100, 23);
         txtId.TabIndex = 34;
         txtId.Visible = false;
-        // 
-        // Nome
-        // 
-        Nome.DataPropertyName = "Nome";
-        Nome.HeaderText = "Nome";
-        Nome.Name = "Nome";
-        // 
-        // Email
-        // 
-        Email.DataPropertyName = "Email";
-        Email.HeaderText = "E-mail";
-        Email.Name = "Email";
-        // 
-        // Telefone
-        // 
-        Telefone.DataPropertyName = "Telefone";
-        Telefone.HeaderText = "Telefone";
-        Telefone.Name = "Telefone";
-        // 
-        // Id
-        // 
-        Id.DataPropertyName = "Id";
-        Id.HeaderText = "Id";
-        Id.Name = "Id";
-        Id.Visible = false;
-        // 
-        // Turma
-        // 
-        Turma.HeaderText = "Turma";
-        Turma.Name = "Turma";
-        Turma.Visible = false;
-        // 
-        // Ativo
-        // 
-        Ativo.HeaderText = "Ativo";
-        Ativo.Name = "Ativo";
-        Ativo.Visible = false;
         // 
         // frmLeitores
         // 

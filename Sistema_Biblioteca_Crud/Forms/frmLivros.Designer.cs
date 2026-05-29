@@ -43,18 +43,18 @@
         txtCategoria = new TextBox();
         chkAtivo = new CheckBox();
         dgvLivros = new DataGridView();
-        txtISBN = new MaskedTextBox();
-        nudQuantidade = new NumericUpDown();
-        txtBusca = new TextBox();
-        statusStrip1 = new StatusStrip();
-        btnLimpar = new Button();
-        txtId = new TextBox();
         Titulo = new DataGridViewTextBoxColumn();
         Id = new DataGridViewTextBoxColumn();
         Autor = new DataGridViewTextBoxColumn();
         Categoria = new DataGridViewTextBoxColumn();
         Quantidade = new DataGridViewTextBoxColumn();
         Ativo = new DataGridViewCheckBoxColumn();
+        txtISBN = new MaskedTextBox();
+        nudQuantidade = new NumericUpDown();
+        statusStrip1 = new StatusStrip();
+        btnLimpar = new Button();
+        txtId = new TextBox();
+        cboFiltroLivro = new ComboBox();
         ((System.ComponentModel.ISupportInitialize)dgvLivros).BeginInit();
         ((System.ComponentModel.ISupportInitialize)nudQuantidade).BeginInit();
         SuspendLayout();
@@ -207,6 +207,7 @@
         // dgvLivros
         // 
         dgvLivros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+        dgvLivros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dgvLivros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvLivros.Columns.AddRange(new DataGridViewColumn[] { Titulo, Id, Autor, Categoria, Quantidade, Ativo });
         dgvLivros.Location = new Point(93, 373);
@@ -216,59 +217,7 @@
         dgvLivros.Size = new Size(1272, 150);
         dgvLivros.TabIndex = 15;
         dgvLivros.CellClick += dgvLivros_CellClick;
-        // 
-        // txtISBN
-        // 
-        txtISBN.Location = new Point(351, 265);
-        txtISBN.Name = "txtISBN";
-        txtISBN.Size = new Size(187, 23);
-        txtISBN.TabIndex = 16;
-        // 
-        // nudQuantidade
-        // 
-        nudQuantidade.Location = new Point(351, 315);
-        nudQuantidade.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
-        nudQuantidade.Name = "nudQuantidade";
-        nudQuantidade.Size = new Size(120, 23);
-        nudQuantidade.TabIndex = 4;
-        nudQuantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
-        // 
-        // txtBusca
-        // 
-        txtBusca.Location = new Point(93, 344);
-        txtBusca.Name = "txtBusca";
-        txtBusca.PlaceholderText = "Buscar livro...'";
-        txtBusca.Size = new Size(177, 23);
-        txtBusca.TabIndex = 17;
-        // 
-        // statusStrip1
-        // 
-        statusStrip1.Location = new Point(0, 532);
-        statusStrip1.Name = "statusStrip1";
-        statusStrip1.Size = new Size(1445, 22);
-        statusStrip1.TabIndex = 18;
-        statusStrip1.Text = "statusStrip1";
-        // 
-        // btnLimpar
-        // 
-        btnLimpar.BackColor = Color.DimGray;
-        btnLimpar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        btnLimpar.ForeColor = SystemColors.ControlLight;
-        btnLimpar.Location = new Point(853, 51);
-        btnLimpar.Name = "btnLimpar";
-        btnLimpar.Size = new Size(171, 60);
-        btnLimpar.TabIndex = 19;
-        btnLimpar.Text = "Limpar";
-        btnLimpar.UseVisualStyleBackColor = false;
-        btnLimpar.Click += btnLimpar_Click;
-        // 
-        // txtId
-        // 
-        txtId.Location = new Point(571, 265);
-        txtId.Name = "txtId";
-        txtId.Size = new Size(100, 23);
-        txtId.TabIndex = 20;
-        txtId.Visible = false;
+        dgvLivros.CellContentClick += dgvLivros_CellContentClick;
         // 
         // Titulo
         // 
@@ -314,15 +263,70 @@
         Ativo.ReadOnly = true;
         Ativo.Visible = false;
         // 
+        // txtISBN
+        // 
+        txtISBN.Location = new Point(351, 265);
+        txtISBN.Name = "txtISBN";
+        txtISBN.Size = new Size(187, 23);
+        txtISBN.TabIndex = 16;
+        // 
+        // nudQuantidade
+        // 
+        nudQuantidade.Location = new Point(351, 315);
+        nudQuantidade.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
+        nudQuantidade.Name = "nudQuantidade";
+        nudQuantidade.Size = new Size(120, 23);
+        nudQuantidade.TabIndex = 4;
+        nudQuantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
+        // 
+        // statusStrip1
+        // 
+        statusStrip1.Location = new Point(0, 532);
+        statusStrip1.Name = "statusStrip1";
+        statusStrip1.Size = new Size(1445, 22);
+        statusStrip1.TabIndex = 18;
+        statusStrip1.Text = "statusStrip1";
+        // 
+        // btnLimpar
+        // 
+        btnLimpar.BackColor = Color.DimGray;
+        btnLimpar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        btnLimpar.ForeColor = SystemColors.ControlLight;
+        btnLimpar.Location = new Point(853, 51);
+        btnLimpar.Name = "btnLimpar";
+        btnLimpar.Size = new Size(171, 60);
+        btnLimpar.TabIndex = 19;
+        btnLimpar.Text = "Limpar";
+        btnLimpar.UseVisualStyleBackColor = false;
+        btnLimpar.Click += btnLimpar_Click;
+        // 
+        // txtId
+        // 
+        txtId.Location = new Point(571, 265);
+        txtId.Name = "txtId";
+        txtId.Size = new Size(100, 23);
+        txtId.TabIndex = 20;
+        txtId.Visible = false;
+        // 
+        // cboFiltroLivro
+        // 
+        cboFiltroLivro.FormattingEnabled = true;
+        cboFiltroLivro.Location = new Point(93, 344);
+        cboFiltroLivro.Name = "cboFiltroLivro";
+        cboFiltroLivro.Size = new Size(121, 23);
+        cboFiltroLivro.TabIndex = 68;
+        cboFiltroLivro.Text = "Todos os livros";
+        cboFiltroLivro.SelectedIndexChanged += cboFiltroLivro_SelectedIndexChanged;
+        // 
         // frmLivros
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1445, 554);
+        Controls.Add(cboFiltroLivro);
         Controls.Add(txtId);
         Controls.Add(btnLimpar);
         Controls.Add(statusStrip1);
-        Controls.Add(txtBusca);
         Controls.Add(nudQuantidade);
         Controls.Add(txtISBN);
         Controls.Add(dgvLivros);
@@ -342,6 +346,7 @@
         Controls.Add(button1);
         Name = "frmLivros";
         Text = "forms";
+        Load += frmLivros_Load_1;
         ((System.ComponentModel.ISupportInitialize)dgvLivros).EndInit();
         ((System.ComponentModel.ISupportInitialize)nudQuantidade).EndInit();
         ResumeLayout(false);
@@ -367,7 +372,6 @@
         private DataGridView dgvLivros;
         private MaskedTextBox txtISBN;
         private NumericUpDown nudQuantidade;
-        private TextBox txtBusca;
         private StatusStrip statusStrip1;
         private Button btnLimpar;
         private TextBox txtId;
@@ -377,5 +381,6 @@
         private DataGridViewTextBoxColumn Categoria;
         private DataGridViewTextBoxColumn Quantidade;
         private DataGridViewCheckBoxColumn Ativo;
+        private ComboBox cboFiltroLivro;
     }
 }

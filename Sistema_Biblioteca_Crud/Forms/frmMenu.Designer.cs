@@ -32,6 +32,7 @@
         btnLeitores = new Button();
         btnEmprestimo = new Button();
         btnSair = new Button();
+        label1 = new Label();
         SuspendLayout();
         // 
         // btnLivros
@@ -39,7 +40,7 @@
         btnLivros.BackColor = Color.DodgerBlue;
         btnLivros.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
         btnLivros.ForeColor = SystemColors.ButtonHighlight;
-        btnLivros.Location = new Point(93, 137);
+        btnLivros.Location = new Point(90, 200);
         btnLivros.Name = "btnLivros";
         btnLivros.Size = new Size(232, 89);
         btnLivros.TabIndex = 0;
@@ -52,7 +53,7 @@
         btnLeitores.BackColor = Color.ForestGreen;
         btnLeitores.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
         btnLeitores.ForeColor = SystemColors.ControlLightLight;
-        btnLeitores.Location = new Point(344, 137);
+        btnLeitores.Location = new Point(341, 200);
         btnLeitores.Name = "btnLeitores";
         btnLeitores.Size = new Size(232, 89);
         btnLeitores.TabIndex = 1;
@@ -65,7 +66,7 @@
         btnEmprestimo.BackColor = Color.DarkViolet;
         btnEmprestimo.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
         btnEmprestimo.ForeColor = SystemColors.ButtonHighlight;
-        btnEmprestimo.Location = new Point(599, 137);
+        btnEmprestimo.Location = new Point(596, 200);
         btnEmprestimo.Name = "btnEmprestimo";
         btnEmprestimo.Size = new Size(232, 89);
         btnEmprestimo.TabIndex = 2;
@@ -78,7 +79,7 @@
         btnSair.BackColor = SystemColors.ControlDarkDark;
         btnSair.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
         btnSair.ForeColor = SystemColors.ButtonFace;
-        btnSair.Location = new Point(855, 137);
+        btnSair.Location = new Point(852, 200);
         btnSair.Name = "btnSair";
         btnSair.Size = new Size(232, 89);
         btnSair.TabIndex = 3;
@@ -86,11 +87,22 @@
         btnSair.UseVisualStyleBackColor = false;
         btnSair.Click += btnSair_Click;
         // 
+        // label1
+        // 
+        label1.AutoSize = true;
+        label1.Font = new Font("Times New Roman", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        label1.Location = new Point(116, 33);
+        label1.Name = "label1";
+        label1.Size = new Size(223, 135);
+        label1.TabIndex = 4;
+        label1.Text = "Desenvolvido por:\r\n\r\n116353 João Hypolito\r\n117128 Caio Grossi\r\n116565 Gustavo Piva\r\n";
+        // 
         // frmMenu
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1235, 404);
+        Controls.Add(label1);
         Controls.Add(btnSair);
         Controls.Add(btnEmprestimo);
         Controls.Add(btnLeitores);
@@ -99,6 +111,7 @@
         Text = "Form1";
         Load += Form1_Load;
         ResumeLayout(false);
+        PerformLayout();
         }
 
         #endregion
@@ -107,5 +120,6 @@
         private Button btnLeitores;
         private Button btnEmprestimo;
         private Button btnSair;
+        private Label label1;
     }
 }

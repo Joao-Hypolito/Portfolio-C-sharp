@@ -33,31 +33,31 @@ namespace Sistema_Biblioteca_Crud
 
         private void ConfigurarComponentes()
         {
-        
+
         dtpEmprestimo.Format = DateTimePickerFormat.Short;
         dtpEmprestimo.Value = DateTime.Today;
 
         dtpDevolucao.Format = DateTimePickerFormat.Short;
-        dtpDevolucao.Value = DateTime.Today.AddDays(7); 
+        dtpDevolucao.Value = DateTime.Today.AddDays(7);
 
-        
+
         dgvEmprestimos.ReadOnly = true;
         dgvEmprestimos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dgvEmprestimos.AutoGenerateColumns = false; 
+        dgvEmprestimos.AutoGenerateColumns = false;
 
-        
+
         btnDevolver.Enabled = false;
         }
 
-    private void CarregarCombos()
-    {
-        
-        cboLeitor.DataSource = _leitorController.Listar();
-        cboLeitor.DisplayMember = "Nome";  
-        cboLeitor.ValueMember = "Id";      
-        cboLeitor.SelectedIndex = -1;      
+        private void CarregarCombos()
+        {
 
-        
+        cboLeitor.DataSource = _leitorController.Listar();
+        cboLeitor.DisplayMember = "Nome";
+        cboLeitor.ValueMember = "Id";
+        cboLeitor.SelectedIndex = -1;
+
+
         var livrosDisponiveis = _livroController.Listar()
             .Where(l => l.Quantidade > 0 && l.Ativo == true)
             .ToList();
@@ -67,18 +67,18 @@ namespace Sistema_Biblioteca_Crud
         cboLivro.ValueMember = "Id";
         cboLivro.SelectedIndex = -1;
 
-        
+
         cboFiltroLeitor.DataSource = _leitorController.Listar();
         cboFiltroLeitor.DisplayMember = "Nome";
         cboFiltroLeitor.ValueMember = "Id";
         cboFiltroLeitor.SelectedIndex = -1;
-    }
+        }
 
         private void CarregarGrid()
         {
         dgvEmprestimos.DataSource = _emprestimoController.Listar();
 
-        
+
         if (dgvEmprestimos.Columns["Id"] != null) dgvEmprestimos.Columns["Id"].Visible = false;
         if (dgvEmprestimos.Columns["LeitorId"] != null) dgvEmprestimos.Columns["LeitorId"].Visible = false;
         if (dgvEmprestimos.Columns["LivroId"] != null) dgvEmprestimos.Columns["LivroId"].Visible = false;
@@ -123,12 +123,12 @@ namespace Sistema_Biblioteca_Crud
             Devolvido = false
         };
 
-        
+
         _emprestimoController.Inserir(novoEmprestimo);
 
-        
+
         CarregarGrid();
-        CarregarCombos(); 
+        CarregarCombos();
         Limpar();
 
         MessageBox.Show("Empréstimo registrado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -136,25 +136,25 @@ namespace Sistema_Biblioteca_Crud
 
         private void dgvEmprestimos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (e.RowIndex < 0) return;
 
-            var row = dgvEmprestimos.Rows[e.RowIndex];
+        if (e.RowIndex < 0) return;
 
-            
-            if (dgvEmprestimos.Columns["Id"] != null && row.Cells["Id"].Value != null)
-            {
-                _idEmprestimoSelecionado = Convert.ToInt32(row.Cells["Id"].Value);
-            }
+        var row = dgvEmprestimos.Rows[e.RowIndex];
 
-            
-            if (dgvEmprestimos.Columns["Devolvido"] != null && row.Cells["Devolvido"].Value != null)
-            {
-                bool isDevolvido = Convert.ToBoolean(row.Cells["Devolvido"].Value);
 
-                
-                btnDevolver.Enabled = !isDevolvido;
-            }
+        if (dgvEmprestimos.Columns["Id"] != null && row.Cells["Id"].Value != null)
+        {
+        _idEmprestimoSelecionado = Convert.ToInt32(row.Cells["Id"].Value);
+        }
+
+
+        if (dgvEmprestimos.Columns["Devolvido"] != null && row.Cells["Devolvido"].Value != null)
+        {
+        bool isDevolvido = Convert.ToBoolean(row.Cells["Devolvido"].Value);
+
+
+        btnDevolver.Enabled = !isDevolvido;
+        }
         }
 
         private void btnDevolver_Click(object sender, EventArgs e)
@@ -169,12 +169,12 @@ namespace Sistema_Biblioteca_Crud
 
         if (confirmacao == DialogResult.Yes)
         {
-        
+
         _emprestimoController.Devolver(_idEmprestimoSelecionado);
 
-        
+
         CarregarGrid();
-        CarregarCombos(); 
+        CarregarCombos();
         Limpar();
 
         MessageBox.Show("Devolução registrada com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -183,10 +183,12 @@ namespace Sistema_Biblioteca_Crud
 
         private void cboFiltroLeitor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboFiltroLeitor.SelectedValue != null && cboFiltroLeitor.Focused)
+        if (cboFiltroLeitor.SelectedValue != null && cboFiltroLeitor.Focused)
             {
                 int idLeitor = (int)cboFiltroLeitor.SelectedValue;
+        
                 
+                dgvEmprestimos.DataSource = _emprestimoController.ListarPorLeitor(idLeitor);
             }
         }
 
@@ -194,10 +196,18 @@ namespace Sistema_Biblioteca_Crud
         {
             cboLeitor.SelectedIndex = -1;
             cboLivro.SelectedIndex = -1;
+            cboFiltroLeitor.SelectedIndex = -1; 
             dtpEmprestimo.Value = DateTime.Today;
             dtpDevolucao.Value = DateTime.Today.AddDays(7);
             _idEmprestimoSelecionado = 0;
             btnDevolver.Enabled = false;
+    
+            CarregarGrid();
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -67,6 +67,41 @@ namespace Sistema_Biblioteca_Crud.Repositories
             return lista;
         }
 
+        public List<Emprestimos> ListarPorLeitor(int idLeitor)
+        {
+            var lista = new List<Emprestimos>();
+            using var con = Conexao.Abrir();
+    
+            var cmd = new SqlCommand(
+                @"SELECT emp.*, lei.Nome AS NomeLeitor, liv.Titulo AS TituloLivro 
+                  FROM Emprestimos emp
+                  INNER JOIN Leitores lei ON emp.LeitorId = lei.Id
+                  INNER JOIN Livros liv ON emp.LivroId = liv.Id
+                  WHERE emp.LeitorId = @idLeitor
+                  ORDER BY emp.DataEmprestimo DESC", con);
+
+            cmd.Parameters.AddWithValue("@idLeitor", idLeitor);
+          
+            using var dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lista.Add(new Emprestimos
+                {
+                    Id = (int)dr["Id"],
+                    LeitorId = (int)dr["LeitorId"],
+                    LivroId = (int)dr["LivroId"],
+                    DataEmprestimo = (DateTime)dr["DataEmprestimo"],
+                    DataDevolucao = (DateTime)dr["DataDevolucao"],
+                    Devolvido = (bool)dr["Devolvido"],
+            
+                    NomeLeitor = dr["NomeLeitor"].ToString()!,
+                    TituloLivro = dr["TituloLivro"].ToString()!
+                });
+            }
+            return lista;
+        }
+
         
         public void Atualizar(Emprestimos e)
         {
