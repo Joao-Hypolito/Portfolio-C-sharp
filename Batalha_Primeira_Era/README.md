@@ -8,10 +8,11 @@ Here is the logical division of It management:
 
 The class stores vital data and character statistics. Using the Math.Clamp property, the code unsures a strict business rule: the attributes never exceed game limits (Minimum 0, maximum 99), preventing bugs of infinite status bugs.
 
-Vida (lifePont) e Armadura (Armor): Controlam a sobrevivência e a mitigação física do dano.
+LifePont and armor: Control the survival and physical damage mitigation.
 
-Atributos de RPG: Força (Strength), Destreza (Dexterity) e Conhecimento (Knowledge).
+RPG attributes: Strength, Dexterity and Knowledge.
 
-Discernimento Espectral (SpectralInsight): Uma mecânica única que define se o personagem consegue interagir ou perceber o Reino Espectral (ativada caso o valor seja maior ou igual a 50).
+Spectral Insight: The unique mechanic that defines if the character can interact or perceive The Spectral Realm (activate if value is greater than or equal 50).  
 
-Arma Equipada (EquippedWeapon): Guarda o objeto da arma que o personagem está empunhando para usar nos cálculos de ataque.
+EquippedWeapon: Stores the weapon object that character equips for to use in damage calculation.
+
