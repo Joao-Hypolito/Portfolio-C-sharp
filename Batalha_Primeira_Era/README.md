@@ -1,10 +1,12 @@
-🛡️ Resumo Técnico: A Classe Mãe Character
-A classe Character é uma classe abstrata que serve como a base (o molde principal) para a criação de qualquer herói, peão ou criatura dentro do universo de Batalha Primeira Era. Ela implementa a interface IDamageable, o que significa que qualquer personagem derivado dela herda a capacidade mecânica de receber dano e interagir no fluxo de combate.
+🛡️ Technical Summary: The Base Class
 
-Aqui está a divisão lógica do que ela gerencia:
+The Character class is an abstract class that serves as like the Blueprint for creation any hero, minion or creature in the Batalha Primeira Era universe. It implements IDamageable interface, which means that any character derived from It inherits mechanical capability to take damage and interact in combat flow.
 
-🗂️ 1. Atributos e Blindagem de Dados (Encapsulamento)
-A classe armazena os dados vitais e estatísticas do personagem. Usando a propriedade Math.Clamp, o código garante uma regra de negócio rígida: os atributos nunca passam dos limites do jogo (mínimo 0, máximo 99), evitando bugs de status infinito.
+Here is the logical division of It management:
+
+🗂️ 1. Attributes and Data shielding (Encapsulation)
+
+The class stores vital data and character statistics. Using the Math.Clamp property, the code unsures a strict business rule: the attributes never exceed game limits (Minimum 0, maximum 99), preventing bugs of infinite status bugs.
 
 Vida (lifePont) e Armadura (Armor): Controlam a sobrevivência e a mitigação física do dano.
 
