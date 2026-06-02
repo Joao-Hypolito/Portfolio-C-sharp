@@ -12,7 +12,7 @@ LifePont and armor: Control the survival and physical damage mitigation.
 
 RPG attributes: Strength, Dexterity and Knowledge.
 
-Spectral Insight: The unique mechanic that defines if the character can interact or perceive The Spectral Realm (activate if value is greater than or equal 50).  
+Spectral Insight: The unique mechanic that defines if the character can interact or perceive The Spectral Realm (activate if value is greater than or equal 50). A boolean method that verifies at runtime if the character possesses the necessary perception to interact with the Spectral Realm.
 
 EquippedWeapon: Stores the weapon object that character equips for to use in damage calculation.
 
