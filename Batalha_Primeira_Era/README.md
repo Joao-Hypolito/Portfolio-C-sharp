@@ -16,3 +16,5 @@ Spectral Insight: The unique mechanic that defines if the character can interact
 
 EquippedWeapon: Stores the weapon object that character equips for to use in damage calculation.
 
+Take Action: This public method is responsible for selecting a body part on a character and applying damage after picking a target. The method is also responsible for checking the weapon and reducing its damage if necessary, according to its durability.
+
