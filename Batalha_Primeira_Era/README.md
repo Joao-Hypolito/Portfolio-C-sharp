@@ -20,3 +20,6 @@ Take Action: This public method is responsible for selecting a body part on a ch
 
 Receive Damage: This function calculates and applies damage to a character based on where they were hit and their armor defense.
 
+🗂️ 2. Spectrum
+
+This class inherits from Character and represents one of the game's bosses. What sets it apart from the others is its ability to break the will of the player-controlled character, should their discernment points prove insufficient for the confrontation.
