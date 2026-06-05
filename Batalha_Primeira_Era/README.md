@@ -18,3 +18,5 @@ EquippedWeapon: Stores the weapon object that character equips for to use in dam
 
 Take Action: This public method is responsible for selecting a body part on a character and applying damage after picking a target. The method is also responsible for checking the weapon and reducing its damage if necessary, according to its durability.
 
+Receive Damage: This function calculates and applies damage to a character based on where they were hit and their armor defense.
+
