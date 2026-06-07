@@ -25,3 +25,7 @@ Receive Damage: This function calculates and applies damage to a character based
 This class inherits from Character and represents one of the game's bosses. What sets it apart from the others is its ability to break the will of the player-controlled character, should their discernment points prove insufficient for the confrontation.
 
 DefendAgainstAttacker: The DefendAgainstAttacker method takes a Character object, named target, as a parameter. This boolean method evaluates the target's SpectralInsight value. If this value is below 40 points, the Spectrum decreases the player's weapon durability to zero, thereby rendering it useless during combat. Otherwise, if the insight is greater than 40, the protagonist becomes immune to the boss's attack.
+
+🗂️ 3. Heroes 
+
+Combat Mage: This class represents the Combat Mage (CombatMage), a hybrid hero in the game Batalha_Primeira_Era. It is a subclass that demonstrates a solid understanding of Object-Oriented Programming (OOP) principles in C#, specifically Inheritance, Interfaces with Generics, and Constructor Overloading (Polymorphism).
