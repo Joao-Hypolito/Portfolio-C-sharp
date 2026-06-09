@@ -28,4 +28,7 @@ DefendAgainstAttacker: The DefendAgainstAttacker method takes a Character object
 
 🗂️ 3. Heroes 
 
-Combat Mage: This class represents the Combat Mage (CombatMage), a hybrid hero in the game Batalha_Primeira_Era. It is a subclass that demonstrates a solid understanding of Object-Oriented Programming (OOP) principles in C#, specifically Inheritance, Interfaces with Generics, and Constructor Overloading (Polymorphism).
+Heroes: The classes inherits from Character, a hybrid hero in the game Batalha_Primeira_Era. It is a subclass that demonstrates a solid understanding of Object-Oriented Programming (OOP) principles in C#, specifically Inheritance, Interfaces with Generics, and Constructor Overloading (Polymorphism).
+
+🗂️ 4. Weapons
+
