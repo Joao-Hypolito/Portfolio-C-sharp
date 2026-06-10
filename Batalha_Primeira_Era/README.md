@@ -6,17 +6,17 @@ Here is the logical division of It management:
 
 🗂️ 1. Attributes and Data shielding (Encapsulation)
 
-The class stores vital data and character statistics. Using the Math.Clamp property, the code unsures a strict business rule: the attributes never exceed game limits (Minimum 0, maximum 99), preventing bugs of infinite status bugs.
+The class stores vital data and character statistics. Using the Math.Clamp method, the code ensures a strict business rule: the attributes never exceed game limits (minimum 0, maximum 99), preventing infinite status bugs.
 
-LifePont and armor: Control the survival and physical damage mitigation.
+LifePoints and Armor: Control survival and physical damage mitigation.
 
-RPG attributes: Strength, Dexterity and Knowledge.
+RPG Attributes: Strength, Dexterity, and Knowledge.
 
-Spectral Insight: The unique mechanic that defines if the character can interact or perceive The Spectral Realm (activate if value is greater than or equal 50). A boolean method that verifies at runtime if the character possesses the necessary perception to interact with the Spectral Realm.
+Spectral Insight: The unique mechanic that defines whether the character can interact with or perceive the Spectral Realm (activates if the value is greater than or equal to 50). A boolean method verifies at runtime whether the character possesses the necessary perception to interact with the Spectral Realm.
 
-EquippedWeapon: Stores the weapon object that character equips for to use in damage calculation.
+EquippedWeapon: Stores the weapon object that the character equips to use in damage calculation.
 
-Take Action: This public method is responsible for selecting a body part on a character and applying damage after picking a target. The method is also responsible for checking the weapon and reducing its damage if necessary, according to its durability.
+Take Action: This public method is responsible for selecting a target, choosing a body part, and applying damage. The method is also responsible for checking the weapon and reducing its damage if necessary, according to its durability.
 
 Receive Damage: This function calculates and applies damage to a character based on where they were hit and their armor defense.
 
