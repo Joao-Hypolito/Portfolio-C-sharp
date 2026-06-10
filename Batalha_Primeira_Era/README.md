@@ -1,4 +1,4 @@
-🛡️ Technical Summary: The Base Class
+﻿🛡️ Technical Summary: The Base Class
 
 The Character class is an abstract class that serves as like the Blueprint for creation any hero, minion or creature in the Batalha Primeira Era universe. It implements IDamageable interface, which means that any character derived from It inherits mechanical capability to take damage and interact in combat flow.
 
@@ -32,3 +32,10 @@ Heroes: The classes inherits from Character, a hybrid hero in the game Batalha_P
 
 🗂️ 4. Weapons
 
+Com certeza, mano! Vamos dar aquele trato profissional para deixar o seu README.md com cara de projeto de nível sênior internacional, abusando das conjunções para deixar a leitura fluida, e já fechar o commit de hoje com chave de ouro.
+
+Aqui está o parágrafo expandido e bem conectado, seguido pelas sugestões de commit:
+
+🗂️ 4. Weapons
+
+Weapons: This class encapsulates the specific attributes and behaviors of weaponry for each hero class, thereby enhancing both code readability and overall system maintainability. By leveraging this structural design, the class exposes the CalculateDamage method, which not only computes the final strike value but also dynamically manages and overrides the weapon's durability during combat sequences. Consequently, this centralized logic ensures that combat calculations remain consistent and easily scalable as new hero classes or equipment types are introduced.
