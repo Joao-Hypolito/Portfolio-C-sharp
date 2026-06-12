@@ -1,8 +1,8 @@
 ﻿🛡️ Technical Summary: The Base Class
 
-The Character class is an abstract class that serves as like the Blueprint for creation any hero, minion or creature in the Batalha Primeira Era universe. It implements IDamageable interface, which means that any character derived from It inherits mechanical capability to take damage and interact in combat flow.
+The Character class is an abstract class that serves as the definitive blueprint for creating any hero, minion, or creature within the Batalha Primeira Era universe. Furthermore, it implements the IDamageable interface. Consequently, any character derived from this base class inherently acquires the mechanical capability to receive damage and seamlessly interact within the combat flow.  
 
-Here is the logical division of It management:
+Here is the logical division of its structural management: 
 
 🗂️ 1. Attributes and Data shielding (Encapsulation)
 
