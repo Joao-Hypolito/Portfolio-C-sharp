@@ -104,9 +104,11 @@ namespace Batalha_Primeira_Era.Core
             get => _Knowledge;
             set => _Knowledge = Math.Clamp(value, 0, 99);
         }
-        public Weapon EquippedWeapon { get; set; }
 
-        public Character(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Weapon wielder) 
+        public Weapon EquippedWeapon { get; set; }
+        public Inventory EquippedInventory { get; set; }
+
+        public Character(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Inventory item) 
         {
             Name = name;
             lifePont = life;
@@ -115,7 +117,8 @@ namespace Batalha_Primeira_Era.Core
             Strength = strength;
             Dexterity = dexterity;
             Knowledge = knowlegde;
-            EquippedWeapon = wielder;
+            EquippedInventory = item;
+            EquippedWeapon = null;
         }
 
         // Método para verificar se este ser consegue interagir com o Reino Espectral
@@ -168,6 +171,17 @@ namespace Batalha_Primeira_Era.Core
                         Console.WriteLine($"Part of the body affected: {randomPart}");
                         target.ReceiveDamage(rawDamage, randomPart);
                     }
+                }
+                else
+                {
+                    // Dano base do soco/corpo a corpo bruto 
+                    int rawDamage = Strength; 
+
+                    Console.WriteLine($"\n{Name} attacks {target.Name} with bare hands/natural weapons!");
+                    Console.WriteLine($"Part of the body affected: {randomPart}");
+            
+                    // Aplica o dano no alvo do mesmo jeito!
+                    target.ReceiveDamage(rawDamage, randomPart);
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using Batalha_Primeira_Era.Items.Weapons;
+﻿using Batalha_Primeira_Era.Items.Inventory;
+using Batalha_Primeira_Era.Items.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,30 +13,14 @@ namespace Batalha_Primeira_Era.Core.Heroes
         public Sword equippedSword {  get; set; }
         public Shield equippedShield { get; set; }
 
-        public Warrior(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Great_Sword wielder) : 
-            base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
+        public Warrior(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Inventory item) :
+        base(name, life, insight, defense, strength, dexterity, knowlegde, item)
         {
-            equippedGreat_Sword = wielder;
+            equippedGreat_Sword = null;
+            equippedGreat_Axe = null;
+            equippedSword = null;
+            equippedShield = null;
         }
-
-        public Warrior(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Great_Axe wielder) :
-        base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
-        {
-            equippedGreat_Axe = wielder;
-        }
-
-        public Warrior(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Sword wielder) :
-        base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
-        {
-            equippedSword = wielder;
-        }
-
-        public Warrior(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Shield wielder) :
-        base(name, life, insight, defense, strength, dexterity, knowlegde, wielder)
-        {
-            equippedShield = wielder;
-        }
-
 
 
         public override void ReceiveDamage(float damage, BodyPart hitPart)

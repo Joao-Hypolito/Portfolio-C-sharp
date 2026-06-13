@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Batalha_Primeira_Era.Core;
+using Batalha_Primeira_Era.Items.Weapons;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Batalha_Primeira_Era.Items.Weapons;
 
 namespace Batalha_Primeira_Era.Items.Inventory
 {
@@ -35,6 +36,23 @@ namespace Batalha_Primeira_Era.Items.Inventory
                 Console.WriteLine($"- {item.Name} | Damage: {item.CurrentDamage}");
             }
             Console.WriteLine("-------------------------\n");
+        }
+
+        public void EquipWeaponFromSlot(int slotIndex, Character character)
+        {
+            // Validação física: o slot existe na mochila?
+            if (slotIndex < 0 || slotIndex >= _slots.Count)
+            {
+                Console.WriteLine("Invalid inventory slot!");
+                return;
+            }
+
+            // Pega a arma escolhida do inventário
+            Weapon weaponToEquip = _slots[slotIndex];
+
+            // Altera o estado do personagem diretamente
+            character.EquippedWeapon = weaponToEquip;
+            Console.WriteLine($"\n[EQUIP] {character.Name} equipou com sucesso: {weaponToEquip.Name}!");
         }
     }
 }

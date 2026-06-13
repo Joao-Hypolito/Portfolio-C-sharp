@@ -1,4 +1,5 @@
-﻿using Batalha_Primeira_Era.Items.Weapons;
+﻿using Batalha_Primeira_Era.Items.Inventory;
+using Batalha_Primeira_Era.Items.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,8 +8,8 @@ namespace Batalha_Primeira_Era.Core.Bosses
 {
     public class Spectrum : Character, IDiscernment
     {
-        public Spectrum(string name, float life, int insight, float defense, int strength, int dexterity, int knowledge, Weapon wielder)
-            : base(name, life, insight, defense, strength, dexterity, knowledge, wielder)
+        public Spectrum(string name, float life, int insight, float defense, int strength, int dexterity, int knowlegde, Inventory item) :
+        base(name, life, insight, defense, strength, dexterity, knowlegde, item)
         {
         }
         public override List<BodyPart> GetTargetTableParts()
