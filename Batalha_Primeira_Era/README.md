@@ -6,19 +6,19 @@ Here is the logical division of its structural management:
 
 🗂️ 1. Attributes and Data shielding (Encapsulation)
 
-The class stores vital data and character statistics. Using the Math.Clamp method, the code ensures a strict business rule: the attributes never exceed game limits (minimum 0, maximum 99), preventing infinite status bugs.
+The class stores vital data and character statistics. Using the Math.Clamp method, the code enforces a strict business rule: attributes never exceed game limits (a minimum of 0 and a maximum of 99), preventing infinite status bugs.
 
-LifePoints and Armor: Control survival and physical damage mitigation.
+LifePoints and Armor: These control survival and physical damage mitigation.
 
-RPG Attributes: Strength, Dexterity, and Knowledge.
+Core Attributes: Strength, Dexterity, and Knowledge.
 
-Spectral Insight: The unique mechanic that defines whether the character can interact with or perceive the Spectral Realm (activates if the value is greater than or equal to 50). A boolean method verifies at runtime whether the character possesses the necessary perception to interact with the Spectral Realm.
+Spectral Insight: A unique mechanic that determines whether the character can perceive or interact with the Spectral Realm (it activates when the value is 50 or higher). A built-in boolean method verifies this perception at runtime.
 
-EquippedWeapon: Stores the weapon object that the character equips to use in damage calculation.
+Equipped Weapon: Stores the weapon object used for damage calculations.
 
-Take Action: This public method is responsible for selecting a target, choosing a body part, and applying damage. The method is also responsible for checking the weapon and reducing its damage if necessary, according to its durability.
+TakeAction (Method): Handles selecting a target, choosing a body part, and applying damage. It also checks the weapon's durability and reduces its damage output if necessary.
 
-Receive Damage: This function calculates and applies damage to a character based on where they were hit and their armor defense.
+ReceiveDamage (Method): Calculates and applies incoming damage based on the hit location and the character's armor defense.
 
 🗂️ 2. Bosses
 
