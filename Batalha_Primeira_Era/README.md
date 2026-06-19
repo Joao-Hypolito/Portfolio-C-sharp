@@ -6,19 +6,19 @@ Here is the logical division of its structural management:
 
 🗂️ 1. Attributes and Data shielding (Encapsulation)
 
-The class stores vital data and character statistics. Using the Math.Clamp method, the code enforces a strict business rule: attributes never exceed game limits (a minimum of 0 and a maximum of 99), preventing infinite status bugs.
+The class encapsulates the character's core state data and gameplay statistics. Through the use of the Math.Clamp method, attribute values are constrained by predefined domain rules, ensuring they remain within valid boundaries (minimum of 0 and maximum of 99). This validation mechanism prevents overflow conditions and unintended stat escalation.
 
-LifePoints and Armor: These control survival and physical damage mitigation.
+    I.LifePoints and Armor: Responsible for managing character survivability, health state, and physical damage mitigation calculations.
 
-Core Attributes: Strength, Dexterity, and Knowledge.
+    II.Primary Attributes: Strength, Dexterity, and Knowledge, which serve as the foundational parameters for gameplay mechanics and character progression.
 
-Spectral Insight: A unique mechanic that determines whether the character can perceive or interact with the Spectral Realm (it activates when the value is 50 or higher). A built-in boolean method verifies this perception at runtime.
+    III.Spectral Insight: Specialized attribute governing the character's ability to perceive and interact with the Spectral Realm. Perception is enabled when the attribute IV.reaches a threshold value of 50 or greater. A dedicated boolean validation method performs runtime verification of this capability.
 
-Equipped Weapon: Stores the weapon object used for damage calculations.
+    IV.Equipped Weapon: Maintains a reference to the currently equipped weapon instance, which is utilized as an input parameter in combat and damage calculation routines.
 
-TakeAction (Method): Handles selecting a target, choosing a body part, and applying damage. It also checks the weapon's durability and reduces its damage output if necessary.
+    V.TakeAction (Method): Executes the offensive action workflow, including target selection, hit location determination, damage computation, and weapon durability validation. The method also applies degradation penalties that may reduce damage output when durability thresholds are reached.
 
-ReceiveDamage (Method): Calculates and applies incoming damage based on the hit location and the character's armor defense.
+    VI.ReceiveDamage (Method): Processes incoming damage events by evaluating hit location multipliers and armor-based damage reduction, subsequently updating the character's health state according to the final calculated damage value.
 
 🗂️ 2. Bosses
 
