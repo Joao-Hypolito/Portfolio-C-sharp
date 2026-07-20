@@ -26,20 +26,20 @@ Highlight: Developed a high-fidelity simulator to replace unstable physical sens
 | **Feedback Loop:** | Modeled real-time control loops where the "Actuator" state (Fan/Heater) dynamically influences the upward or downward trend of the simulated variable, creating a self-adjusting ecosystem.|
 
 ## 🏛️ 3. School Library System (LibraryCrud)
-| Focused on Windows Forms Architecture, Multilayer Data Access, and Relational Database Integrity. |
+| Focused on Desktop Architecture, Multilayer Data Access, and Relational database integrity. |
 | :--- |
 
-Highlight: Developed a comprehensive school library management system from scratch using C# Windows Forms and SQL Server LocalDB, featuring safe data operations, automated business rules, and asynchronous feedback loops.
+Highlight: Developed an enterprise-grade school library management system from scratch using C# Windows Forms and SQL Server LocalDB, featuring fault-tolerant data operations, enforced domain constraints, and asynchronous feedback loops.
 
 > [!NOTE]
 > **Technical Details:**
 
 | Attribute | Description |
 | :--- | :--- |
-| **Relational Database Design**: | Formulated a 3-table normalized schema (`Livros`, `Leitores`, `Emprestimos`) complete with Primary Keys, Auto-Increments, and Double Foreign Key constraints to bind readers and books into deterministic relationship mapping. |
-| **Atomic State Updates (Delta Logic)**: | Implemented inline SQL update streams (`UPDATE Livros SET Quantidade = Quantidade + @delta`) where `@delta` dynamically adjusts by `-1` (loan) or `+1` (return), guaranteeing data race prevention and multi-user transactional stability. |
-| **Polymorphic Data Binding**: | Leveraged explicit `DisplayMember` and `ValueMember` abstraction layer mappings on WinForms `ComboBox` control structures, allowing clean Object-to-UI binding and fetching primary identifiers cleanly via `SelectedValue`. |
-| **Dynamic Conditional UI Rendering**: | Hooked into the `DataBindingComplete` cycle inside the `DataGridView` framework to run a synchronous inspection engine over rows, instantly changing row backgrounds dynamically based on loan status (e.g., green for returned, soft red for overdue items). |
+| **Relational Database Design**: | Engineered a triple-entity relational topology (`Livros`, `Leitores`, `Emprestimos`) complete with Primary Keys, Auto-Increments, and Foreign Key constraints to bind entities into deterministic relationship mapping. |
+| **Atomic State Updates (Delta Logic)**: | Implemented inline SQL update streams (`UPDATE Livros SET Quantidade = Quantidade + @delta`) where `@delta` dynamically adjusts by `-1` (loan) or `+1` (return), ensuring concurrency control and multi-user transactional stability. |
+| **Polymorphic Data Binding**: | Utilized explicit `DisplayMember` and `ValueMember` abstraction layers on WinForms `ComboBox` control structures, enabling seamless Object-to-UI binding and fetching primary identifiers cleanly via `SelectedValue`. |
+| **Dynamic Conditional UI Rendering**: | Integrated a synchronous inspection engine inside the `DataGridView` framework to run during the `DataBindingComplete` cycle, dynamically altering row styles based on loan statuses (e.g., green for returned, soft red for overdue items). |
 
 ## 🚀 Key Architectural Features
 * `Strict Layer Separation:` Decoupled database connection contexts and parameterized commands inside strong repository implementations **(Data, Models, Repositories, Forms)**, ensuring code maintainability and testing boundaries.
