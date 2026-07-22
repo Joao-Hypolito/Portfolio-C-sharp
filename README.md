@@ -3,18 +3,20 @@
 A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
 
 ## 🤖 1. Decepticon Arm (Combat Management Units)
-| Focus: Object Association (Aggregation vs. Composition). |
+| Focus: Relationship Modeling (Aggregation and Composition). |
 | :--- |
 
-**Highlight:** Modeling military hierarchy and combiner bots.
+**Highlight:** Designed the military command structure and the architecture of combiner robots.
 
-**Technique:** implementing Strong Relationships (Composition) for fixed body members and Weak relationships (Aggregation) for dynamics leadership.
+**Technique:** Applied **Composition** to represent permanent body components and **Aggregation** to model flexible command relationships.
+
+---
 
 ## 🏛️ 2. Digital-Twin-Greenhouse-Simulator
-| Focused on Hardware Virtualization, Stochastic Simulation, and System Resilience. |
+| Focus: Hardware Emulation, Probabilistic Simulation, and Fault Tolerance. |
 | :--- |
 
-Highlight: Developed a high-fidelity simulator to replace unstable physical sensors, ensuring data stream integrity for SQL and Dashboard integration.
+**Highlight:** Built a realistic virtual environment that replaces unreliable physical sensors, maintaining consistent data acquisition for SQL databases and dashboard visualization.
 
 > [!NOTE]
 > **Technical Details:**
