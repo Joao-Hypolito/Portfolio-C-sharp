@@ -16,7 +16,7 @@ A collection of practical systems developed to consolidate the pillars of Object
 | Focus: Hardware Emulation, Probabilistic Simulation, and Fault Tolerance. |
 | :--- |
 
-**Highlight:** Built a realistic virtual environment that replaces unreliable physical sensors, maintaining consistent data acquisition for SQL databases and dashboard visualization.
+**Highlight:** Built a realistic virtual environment that replaces unreliable physical sensors, maintaining consistent data acquisition for SQL databases and dashboard visualization. 
 
 > [!NOTE]
 > **Technical Details:**
@@ -44,9 +44,9 @@ Highlight: Developed an enterprise-grade school library management system from s
 | **Dynamic Conditional UI Rendering**: | Integrated a synchronous inspection engine inside the `DataGridView` framework to run during the `DataBindingComplete` cycle, dynamically altering row styles based on loan statuses (e.g., green for returned, soft red for overdue items). |
 
 ## 🚀 Key Architectural Features
-* `Strict Layer Separation:` Decoupled database connection contexts and parameterized commands inside strong repository implementations **(Data, Models, Repositories, Forms)**, ensuring code maintainability and testing boundaries.
-* `Downstream Constraints:` Built pre-execution validation checks that block loans immediately if a specific book's physical record counts reach **0**, automatically dropping exhausted instances out of active UI combo controls.
-* `Enhanced UX Framework:` Fully mapped custom **TabOrder** sequencing across all fields, unified keyboard shortcut operations **(Ctrl+N, Ctrl+S, Ctrl+E, Del, Esc)**, and implemented an automatic **Timer** thread to clear action success banners after 4 seconds.
+* `Strict Layer Separation:` Isolated database connection contexts and parameterized commands within robust repository implementations (Data, Models, Repositories, Forms), guaranteeing code maintainability and clear testing boundaries.
+* `Downstream Constraints:` Engineered pre-execution validation checks that instantly block loans if a specific book's physical inventory drops to 0, automatically removing depleted titles from active UI combo controls.
+* `Enhanced UX Framework:` Thoroughly mapped custom TabOrder sequencing across all inputs, standardized keyboard shortcut operations (Ctrl+N, Ctrl+S, Ctrl+E, Del, Esc), and deployed an automatic Timer thread to dismiss success banners after 4 seconds.
 
 ## 🚀 Technologies and Concepts Language: C# (.NET 10.0)
 
