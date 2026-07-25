@@ -31,15 +31,15 @@ A collection of practical systems developed to consolidate the pillars of Object
 | Focused on Desktop Architecture, Multilayer Data Access, and Relational database integrity. |
 | :--- |
 
-Highlight: Developed an enterprise-grade school library management system from scratch using C# Windows Forms and SQL Server LocalDB, featuring fault-tolerant data operations, enforced domain constraints, and asynchronous feedback loops.
+Highlight: Architected an enterprise-grade school library system from the ground up using C# Windows Forms and SQL Server LocalDB, featuring resilient data operations, strict domain validation, and asynchronous UX feedback mechanisms.
 
 > [!NOTE]
 > **Technical Details:**
 
 | Attribute | Description |
 | :--- | :--- |
-| **Relational Database Design**: | Engineered a triple-entity relational topology (`Livros`, `Leitores`, `Emprestimos`) complete with Primary Keys, Auto-Increments, and Foreign Key constraints to bind entities into deterministic relationship mapping. |
-| **Atomic State Updates (Delta Logic)**: | Implemented inline SQL update streams (`UPDATE Livros SET Quantidade = Quantidade + @delta`) where `@delta` dynamically adjusts by `-1` (loan) or `+1` (return), ensuring concurrency control and multi-user transactional stability. |
+| **Relational Database Design**: | Designed a three-tier relational schema (Livros, Leitores, Emprestimos) incorporating Primary Keys, Auto-Incrementing IDs, and Foreign Key constraints to maintain strict structural integrity across entities. |
+| **Atomic State Updates (Delta Logic)**: | Executed parameterized SQL update streams (UPDATE Livros SET Quantidade = Quantidade + @delta), dynamically passing @delta as -1 (checkout) or +1 (check-in) to guarantee thread safety and prevent race conditions. |
 | **Polymorphic Data Binding**: | Utilized explicit `DisplayMember` and `ValueMember` abstraction layers on WinForms `ComboBox` control structures, enabling seamless Object-to-UI binding and fetching primary identifiers cleanly via `SelectedValue`. |
 | **Dynamic Conditional UI Rendering**: | Integrated a synchronous inspection engine inside the `DataGridView` framework to run during the `DataBindingComplete` cycle, dynamically altering row styles based on loan statuses (e.g., green for returned, soft red for overdue items). |
 
