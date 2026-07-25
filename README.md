@@ -3,12 +3,12 @@
 A collection of practical systems developed to consolidate the pillars of Object-Oriented Programming (OOP) in C#.
 
 ## 🤖 1. Decepticon Arm (Combat Management Units)
-| Focus: Relationship Modeling (Aggregation and Composition). |
+| Focus: Object Relationship Modeling |
 | :--- |
 
-**Highlight:** Designed the military command structure and the architecture of combiner robots.
+**Highlight:** Architected a combat command system capable of managing complex combiner robot structures.
 
-**Technique:** Applied **Composition** to represent permanent body components and **Aggregation** to model flexible command relationships.
+**Technique:** Applied **Composition** for tightly coupled, non-shareable physical parts, and **Aggregation** to manage loose, interchangeable tactical alignments.
 
 ---
 
